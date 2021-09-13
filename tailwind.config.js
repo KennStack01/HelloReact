@@ -7,7 +7,13 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Roboto", ...defaultTheme.fontFamily.sans],
+        sans: [
+          "Gontserrat",
+          "Roboto",
+          "bitter",
+          "Open Sans",
+          ...defaultTheme.fontFamily.sans,
+        ],
       },
       colors: {
         helloblue: {
