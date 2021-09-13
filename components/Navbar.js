@@ -3,6 +3,8 @@ import Link from "next/link";
 import { BsFillCollectionFill } from "react-icons/bs";
 import { MdCollectionsBookmark } from "react-icons/md";
 import { HiViewGridAdd, HiNewspaper } from "react-icons/hi";
+import { MdWork } from "react-icons/md";
+import { FaHandsHelping } from "react-icons/fa";
 
 const Navbar = () => {
   return (
@@ -56,6 +58,38 @@ const Navbar = () => {
                   <HiViewGridAdd />
                 </div>
                 <span className="my-auto mx-4">Add Resource</span>
+              </div>
+            </a>
+          </Link>
+        </div>
+        {/* Jobs */}
+        <div className="hover:bg-hellosidebarblue-400 hover:shadow-lg p-2 my-2 rounded-md">
+          <Link href="/">
+            <a>
+              <div className="flex flex-row my-auto font-medium">
+                <div className="text-2xl">
+                  <MdWork />
+                </div>
+                <span className="my-auto mx-4">Jobs</span>
+                <span className="text-xs text-gray-500 italic my-auto">
+                  coming soon
+                </span>
+              </div>
+            </a>
+          </Link>
+        </div>
+        {/* Sponsors */}
+        <div className="hover:bg-hellosidebarblue-400 hover:shadow-lg p-2 my-2 rounded-md">
+          <Link href="/">
+            <a>
+              <div className="flex flex-row my-auto font-medium">
+                <div className="text-2xl">
+                  <FaHandsHelping />
+                </div>
+                <span className="my-auto mx-4">Sponsors</span>
+                <span className="text-xs text-gray-500 italic my-auto">
+                  soon
+                </span>
               </div>
             </a>
           </Link>

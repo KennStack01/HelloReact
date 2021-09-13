@@ -30,7 +30,7 @@ const PubBanner = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col place-content-end bg-helloblue-600 py-10 px-8 rounded-3xl">
+      <div className="flex flex-col place-content-end bg-helloblue-600 py-10 px-8 rounded-3xl cursor-pointer">
         <p className="italic">Reserved Space</p>
         <h2 className="font-bold text-center mb-4">Contact us</h2>
         <div className="flex flex-row justify-center text-helloblue-700 font-bold bg-helloyellow-500 rounded-xl p-2">
