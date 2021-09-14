@@ -19,7 +19,7 @@ const Navbar = () => {
                   <BsFillCollectionFill />
                 </div>
                 <span className="my-auto mx-4 text-sm md:text-md">
-                  All Categories
+                  Hello React
                 </span>
               </div>
             </a>
@@ -30,7 +30,7 @@ const Navbar = () => {
           <Link href="/">
             <a>
               <div className="flex flex-row my-auto font-medium">
-                <div className="text-3xl ml-0">
+                <div className="text-2xl">
                   <HiNewspaper />
                 </div>
                 <span className="my-auto mx-4 text-sm md:text-md">
