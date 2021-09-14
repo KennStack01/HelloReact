@@ -18,7 +18,9 @@ const Navbar = () => {
                 <div className="text-2xl">
                   <BsFillCollectionFill />
                 </div>
-                <span className="my-auto mx-4">All Categories</span>
+                <span className="my-auto mx-4 text-sm md:text-md">
+                  All Categories
+                </span>
               </div>
             </a>
           </Link>
@@ -31,7 +33,9 @@ const Navbar = () => {
                 <div className="text-3xl ml-0">
                   <HiNewspaper />
                 </div>
-                <span className="my-auto mx-4">React News</span>
+                <span className="my-auto mx-4 text-sm md:text-md">
+                  React News
+                </span>
               </div>
             </a>
           </Link>
@@ -44,7 +48,9 @@ const Navbar = () => {
                 <div className="text-2xl">
                   <MdCollectionsBookmark />
                 </div>
-                <span className="my-auto mx-4">My Bookmark</span>
+                <span className="my-auto mx-4 text-sm md:text-md">
+                  My Bookmark
+                </span>
               </div>
             </a>
           </Link>
@@ -57,7 +63,9 @@ const Navbar = () => {
                 <div className="text-2xl">
                   <HiViewGridAdd />
                 </div>
-                <span className="my-auto mx-4">Add Resource</span>
+                <span className="my-auto mx-4 text-sm md:text-md">
+                  Add Resource
+                </span>
               </div>
             </a>
           </Link>
@@ -70,9 +78,9 @@ const Navbar = () => {
                 <div className="text-2xl">
                   <MdWork />
                 </div>
-                <span className="my-auto mx-4">Jobs</span>
+                <span className="my-auto mx-4 text-sm md:text-md">Jobs</span>
                 <span className="text-xs text-gray-500 italic my-auto">
-                  coming soon
+                  soon
                 </span>
               </div>
             </a>
@@ -86,7 +94,9 @@ const Navbar = () => {
                 <div className="text-2xl">
                   <FaHandsHelping />
                 </div>
-                <span className="my-auto mx-4">Sponsors</span>
+                <span className="my-auto mx-4 text-sm md:text-md">
+                  Sponsors
+                </span>
                 <span className="text-xs text-gray-500 italic my-auto">
                   soon
                 </span>

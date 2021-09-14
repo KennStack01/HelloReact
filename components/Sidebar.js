@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Navbar from "./Navbar";
 import { GoSettings } from "react-icons/go";
@@ -10,13 +10,13 @@ import {
 import UserInfo from "./UserInfo";
 
 const Sidebar = () => {
-  const [isSideBarOpen, setSideBarOpen] = React.useState(true);
+  const [isSideBarHidden, setSideBarHidden] = useState(false);
 
   return (
     <>
-      {isSideBarOpen && (
+      {isSideBarHidden && (
         <div
-          className={`flex flex-col justify-between text-white bg-hellosidebarblue-500 w-1/6 h-screen sticky left-0 bottom-0 top-0`}
+          className={`flex flex-col justify-between text-white bg-hellosidebarblue-500 w-2/3 md:w-1/6 h-screen max-h-screen absolute z-50 left-0 bottom-0 top-0`}
         >
           {/* user info */}
           <div>
@@ -28,8 +28,8 @@ const Sidebar = () => {
               <Navbar />
             </div>
             <div
-              onClick={() => setSideBarOpen(false)}
-              className="absolute bg-hellosidebarblue-400 hover:bg-hellosidebarblue-500 shadow-md text-3xl px-2 py-1 ml-48 -mt-56 rounded cursor-pointer"
+              onClick={() => setSideBarHidden(false)}
+              className="absolute bg-hellosidebarblue-400 hover:bg-hellosidebarblue-500 shadow-md text-3xl px-2 py-1 ml-64 md:ml-48 -mt-56 rounded cursor-pointer"
             >
               <IoIosArrowBack />
             </div>
@@ -47,9 +47,9 @@ const Sidebar = () => {
         </div>
       )}
 
-      {!isSideBarOpen && (
+      {!isSideBarHidden && (
         <div
-          onClick={() => setSideBarOpen(true)}
+          onClick={() => setSideBarHidden(true)}
           className="fixed z-56 top-60 left-0 text-white bg-hellosidebarblue-400 hover:bg-hellosidebarblue-500 shadow-md text-3xl px-2 py-1 rounded-r cursor-pointer"
         >
           <IoIosArrowForward />
