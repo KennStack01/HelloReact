@@ -1,5 +1,7 @@
 import Head from "next/head";
 import Navbar from "../components/HelloReact/Navbar";
+import TabsRender from "../components/HelloReact/Tabs";
+import { BiSearchAlt } from "react-icons/bi";
 
 export default function Home() {
   return (
@@ -8,10 +10,12 @@ export default function Home() {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header>
-        <Navbar />
-      </header>
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center"></main>
+      <main className="flex flex-col w-full flex-1 px-20 text-center">
+        {/* Tab and Search */}
+        <div className="flex flex-row justify-between">
+          <TabsRender />
+        </div>
+      </main>
 
       {/* <footer className="flex items-center justify-center w-full h-24 border-t"></footer> */}
     </div>
