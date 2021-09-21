@@ -1,17 +1,23 @@
 import React from "react";
 
+import ArticlesList from "../Articles/ArticlesList";
+import VideosList from "../Videos/VideosList";
+import DocsList from "../Docs/DocsList";
+import EbooksList from "../E-Books/EBooksList";
+import WebsitesList from "../Websites/WebsitesList";
+
 const Tabs = ({ color }) => {
   const [openTab, setOpenTab] = React.useState(1);
   return (
     <>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap z-0">
         <div className="">
           <div className="flex">
             <ul
-              className="flex sticky top-0 mb-0 list-none flex-wrap pt-3 pb-4 flex-row justify-between text-gray-700 font-semibold"
+              className="md:flex flex-row grid grid-cols-3 md:justify-between sticky top-0 mb-0 list-none flex-wrap pt-3 pb-4 text-gray-700 font-semibold"
               role="tablist"
             >
-              <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+              <li className="-mb-px mx-2 md:mx-1 md:my-2 my-3 last:mr-0 flex-auto text-center">
                 <a
                   className={
                     "text-xs font-bold uppercase px-5 py-3 rounded block leading-normal " +
@@ -27,10 +33,10 @@ const Tabs = ({ color }) => {
                   href="#link1"
                   role="tablist"
                 >
-                  Websites
+                  Articles
                 </a>
               </li>
-              <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+              <li className="-mb-px mx-2 md:mx-1 md:my-2 my-3 last:mr-0 flex-auto text-center">
                 <a
                   className={
                     "text-xs font-bold uppercase px-5 py-3 rounded block leading-normal " +
@@ -46,10 +52,10 @@ const Tabs = ({ color }) => {
                   href="#link2"
                   role="tablist"
                 >
-                  Docs
+                  Videos
                 </a>
               </li>
-              <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+              <li className="-mb-px mx-2 md:mx-1 md:my-2 my-3 last:mr-0 flex-auto text-center">
                 <a
                   className={
                     "text-xs font-bold uppercase px-5 py-3 rounded block leading-normal " +
@@ -65,10 +71,10 @@ const Tabs = ({ color }) => {
                   href="#link3"
                   role="tablist"
                 >
-                  Articles
+                  Docs
                 </a>
               </li>
-              <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+              <li className="-mb-px mx-2 md:mx-1 md:my-2 my-3 last:mr-0 flex-auto text-center col-span-2">
                 <a
                   className={
                     "text-xs font-bold uppercase px-5 py-3 rounded block leading-normal " +
@@ -84,10 +90,10 @@ const Tabs = ({ color }) => {
                   href="#link4"
                   role="tablist"
                 >
-                  Videos
+                  Websites
                 </a>
               </li>
-              <li className="-mb-px mr-2 last:mr-0 flex-auto text-center">
+              <li className="-mb-px mx-2 md:mx-1 md:my-2 my-3 last:mr-0 flex-auto text-center">
                 <a
                   className={
                     "text-xs font-bold uppercase px-5 py-3 rounded block leading-normal " +
@@ -103,14 +109,14 @@ const Tabs = ({ color }) => {
                   href="#link5"
                   role="tablist"
                 >
-                  E-book
+                  E-books
                 </a>
               </li>
-              <div className="my-auto mx-auto">
+              <div className="md:my-auto md:mx-3 my-4 col-span-3">
                 <input
                   type="text"
-                  placeholder={`Type and Search 🤔`}
-                  className="px-5 py-2 placeholder-gray-500 text-blueGray-600 bg-white rounded text-sm border-helloblue-700 outline-none focus:outline-none focus:ring w-full"
+                  placeholder={`Type and Search`}
+                  className="px-3 py-2 placeholder-gray-400 text-blueGray-600 bg-white rounded text-sm outline-none focus:outline-none focus:ring-2 focus:ring-helloblue-600 w-full"
                 />
               </div>
             </ul>
@@ -119,55 +125,19 @@ const Tabs = ({ color }) => {
             <div className="px-4 py-5 flex-auto">
               <div className="tab-content tab-space">
                 <div className={openTab === 1 ? "block" : "hidden"} id="link1">
-                  <p>
-                    Collaboratively administrate empowered markets via
-                    plug-and-play networks. Dynamically procrastinate B2C users
-                    after installed base benefits.
-                    <br />
-                    <br /> Dramatically visualize customer directed convergence
-                    without revolutionary ROI.
-                  </p>
+                  <ArticlesList />
                 </div>
                 <div className={openTab === 2 ? "block" : "hidden"} id="link2">
-                  <p>
-                    Completely synergize resource taxing relationships via
-                    premier niche markets. Professionally cultivate one-to-one
-                    customer service with robust ideas.
-                    <br />
-                    <br />
-                    Dynamically innovate resource-leveling customer service for
-                    state of the art customer service.
-                  </p>
+                  <VideosList />
                 </div>
                 <div className={openTab === 3 ? "block" : "hidden"} id="link3">
-                  <p>
-                    Completely synergize resource taxing relationships via
-                    premier niche markets. Professionally cultivate one-to-one
-                    customer service with robust ideas.
-                    <br />
-                    <br /> Dramatically maintain clicks-and-mortar solutions
-                    without functional solutions.
-                  </p>
+                  <DocsList />
                 </div>
                 <div className={openTab === 4 ? "block" : "hidden"} id="link4">
-                  <p>
-                    Completely synergize resource taxing relationships via
-                    premier niche markets. Professionally cultivate one-to-one
-                    customer service with robust ideas.
-                    <br />
-                    <br /> Dramatically maintain clicks-and-mortar solutions
-                    without functional solutions.
-                  </p>
+                  <WebsitesList />
                 </div>
                 <div className={openTab === 5 ? "block" : "hidden"} id="link5">
-                  <p>
-                    Completely synergize resource taxing relationships via
-                    premier niche markets. Professionally cultivate one-to-one
-                    customer service with robust ideas.
-                    <br />
-                    <br /> Dramatically maintain clicks-and-mortar solutions
-                    without functional solutions.
-                  </p>
+                  <EbooksList />
                 </div>
               </div>
             </div>

@@ -51,7 +51,7 @@ const Sidebar = () => {
       {!isSideBarHidden && (
         <div
           onClick={() => setSideBarHidden(true)}
-          className="fixed z-56 top-60 left-0 text-white bg-hellosidebarblue-400 hover:bg-hellosidebarblue-500 shadow-md text-3xl px-3 py-2 rounded-r cursor-pointer"
+          className="fixed z-50 top-60 left-0 text-white bg-hellosidebarblue-400 hover:bg-hellosidebarblue-500 shadow-md text-3xl px-3 py-2 rounded-r cursor-pointer"
         >
           <IoIosArrowForward />
         </div>
