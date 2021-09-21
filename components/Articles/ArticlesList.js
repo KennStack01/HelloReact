@@ -21,17 +21,20 @@ const ArticlesList = () => {
   }, []);
 
   console.log(articles);
+  // console.log(articles[0].contentSnippet);
 
   return (
     <div>
       <h1 className="font-semibold"> Welcome to Articles 💪 </h1>
-      <div className="grid grid-cols-3 mx-auto">
+      <div className="flex flex-col md:grid grid-cols-3 mx-auto">
         {articles
           ? articles.map((article) => (
               <Article
                 key={article.guid}
                 title={article.title}
-                link={Article.link}
+                pubDate={article.pubDate}
+                link={article.link}
+                content={article.content}
               />
             ))
           : null}

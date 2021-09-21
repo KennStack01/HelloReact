@@ -1,15 +1,27 @@
 import React from "react";
 import { BsBoxArrowUpRight } from "react-icons/bs";
+import Moment from "react-moment";
+import { useReadingTime } from "react-reading-time-estimator";
 
 // This is the Article Component
 const Article = ({
   picturelURL = "https://danilowoz.com/images/atomic-design-with-react/cover.jpg",
   title,
+  pubDate,
   link,
+  content = "",
 }) => {
+  const dateToFormat = new Date(pubDate);
+  const {
+    text, // 1 min read
+    minutes, // 1
+    words, // 168
+    time, // 0.5309090909090909
+  } = useReadingTime(content);
+
   return (
     <div className="mx-3 md:mx-5">
-      <section className="flex flex-col bg-mirage-400 rounded-lg shadow md:h-80 h-72 w-72 m-auto my-4">
+      <section className="flex flex-col bg-mirage-400 rounded-lg shadow hover:shadow-sm md:h-80 h-72 w-72 m-auto my-4">
         <img
           className="w-full h-40 md:h-48 object-cover object-center rounded-t-lg"
           src={picturelURL}
@@ -17,19 +29,28 @@ const Article = ({
         />
         <div className="flex-grow m-auto text-gray-700 text-center mx-2">
           <div>
-            <h1 className="text-md font-semibold font-sans">{title}</h1>
+            <a href={`${link}`} target="__blank">
+              <h1 className="text-md font-semibold font-sans hover:text-helloblue-600">
+                {title}
+              </h1>
+            </a>
             {/* <p className="text-md mT-2"> { post.brief.substring(0, 60).concat(`...`) } </p> */}
-            <p className="text-xs">
-              {" "}
-              {/* {new Date(post.dateAdded).toDateString()}{" "} */}
-            </p>
+            <div className="flex flex-row justify-center my-2">
+              <p className="text-xs">
+                {" "}
+                {/* {new Date(post.dateAdded).toDateString()}{" "} */}
+                <Moment date={dateToFormat} format="MMM Do, YYYY" />
+                {" • "}
+                <span className="text-xs">{text}</span>
+              </p>
+            </div>
           </div>
         </div>
-        <div className="m-auto my-2">
+        <div className="m-auto my-2 hover:drop-shadow-md">
           <a href={`${link}`} target="__blank">
-            <div className="flex flex-row font-semibold bg-helloyellow-600 text-gray-900">
-              <h3>Read it</h3>
-              <span className="text-xl mt-1 mx-2">
+            <div className="flex flex-row font-semibold bg-helloyellow-600 text-gray-900 p-2 rounded">
+              <h3 className=" my-auto ml-2 mr-1">Read it</h3>
+              <span className="text-xl ml-1 mr-2">
                 <BsBoxArrowUpRight />
               </span>
             </div>
