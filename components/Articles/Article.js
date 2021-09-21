@@ -1,5 +1,5 @@
 import React from "react";
-import { BsBoxArrowUpRight } from "react-icons/bs";
+import { BsBoxArrowUpRight, BsBookmarksFill } from "react-icons/bs";
 import Moment from "react-moment";
 import { useReadingTime } from "react-reading-time-estimator";
 
@@ -46,15 +46,21 @@ const Article = ({
             </div>
           </div>
         </div>
-        <div className="m-auto my-2 hover:drop-shadow-md">
-          <a href={`${link}`} target="__blank">
-            <div className="flex flex-row font-semibold bg-helloyellow-600 text-gray-900 p-2 rounded">
+        <div className="flex flex-row m-auto my-2">
+          <a href={`${link}`} target="__blank" className="items-center">
+            <div className="flex flex-row font-semibold bg-helloyellow-600 text-gray-900 p-2 rounded  hover:drop-shadow-md">
               <h3 className=" my-auto ml-2 mr-1">Read it</h3>
               <span className="text-xl ml-1 mr-2">
                 <BsBoxArrowUpRight />
               </span>
             </div>
           </a>
+          <button className="flex flex-row font-semibold bg-hellodarkblue-400 text-white p-2 ml-4 rounded">
+            {/* <h3 className=" my-auto ml-2 mr-1">Read it</h3> */}
+            <span className="text-xl ml-1 mr-2">
+              <BsBookmarksFill />
+            </span>
+          </button>
         </div>
       </section>
     </div>

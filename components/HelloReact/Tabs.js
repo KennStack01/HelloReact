@@ -14,7 +14,7 @@ const Tabs = ({ color }) => {
         <div className="">
           <div className="flex md:sticky top-0 z-10">
             <ul
-              className="md:flex flex-row grid grid-cols-3 md:justify-between mb-0 list-none flex-wrap pt-3 pb-4 text-gray-700 font-semibold md:backdrop-filter md:backdrop-blur md:shadow-sm md:w-full"
+              className="md:flex flex-row grid grid-cols-3 md:justify-between mb-0 list-none flex-wrap pt-3 pb-4 text-gray-700 font-semibold md:backdrop-filter md:backdrop-blur-xl md:shadow-sm md:w-full"
               role="tablist"
             >
               <li className="-mb-px mx-2 md:mx-1 md:my-2 my-3 last:mr-0 flex-auto text-center">
