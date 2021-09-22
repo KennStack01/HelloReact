@@ -1,5 +1,5 @@
 import React from "react";
-import { BsBoxArrowUpRight, BsBookmarksFill } from "react-icons/bs";
+import { BsBoxArrowUpRight, BsBookmark, BsBookmarkFill } from "react-icons/bs";
 import Moment from "react-moment";
 import { useReadingTime } from "react-reading-time-estimator";
 
@@ -11,6 +11,11 @@ const Article = ({
   link,
   content = "",
 }) => {
+  const [isBookmarked, setBookmarked] = React.useState(false);
+  const handleBookmark = () => {
+    setBookmarked(!isBookmarked);
+  };
+
   const dateToFormat = new Date(pubDate);
   const {
     text, // 1 min read
@@ -55,10 +60,13 @@ const Article = ({
               </span>
             </div>
           </a>
-          <button className="flex flex-row font-semibold bg-hellodarkblue-400 text-white p-2 ml-4 rounded">
+          <button
+            onClick={handleBookmark}
+            className="flex flex-row font-semibold rounded-lg bg-white text-helloblue-500 shadow-sm p-2 ml-4"
+          >
             {/* <h3 className=" my-auto ml-2 mr-1">Read it</h3> */}
-            <span className="text-xl ml-1 mr-2">
-              <BsBookmarksFill />
+            <span className="text-2xl mx-1">
+              {isBookmarked ? <BsBookmarkFill /> : <BsBookmark />}
             </span>
           </button>
         </div>
