@@ -31,6 +31,7 @@ const ArticlesList = () => {
   }
 
   useEffect(() => {
+    rssList = rssList.sort(() => Math.random() - 0.5);
     rssList.forEach((url) => {
       tempURL = url;
       const parser = new Parser();
@@ -59,7 +60,7 @@ const ArticlesList = () => {
     });
     setArticles(tempArray);
     // console.log(tempArray);
-  }, []);
+  }, [rssList]);
 
   console.log(articles);
 
@@ -104,10 +105,10 @@ const ArticlesList = () => {
                   } else if (
                     article.title
                       .toLowerCase()
-                      .includes(searchTerm.toLowerCase()) ||
+                      .includes(searchTerm.toLowerCase().trim()) ||
                     article.link
                       .toLowerCase()
-                      .includes(searchTerm.toLowerCase())
+                      .includes(searchTerm.toLowerCase().trim())
                   ) {
                     return article;
                   }
@@ -146,31 +147,31 @@ const ArticlesList = () => {
         )}
       </div> */}
       {process.browser ? (
-        <div>
-          <HideScroll variant="down">
-            <Link
-              to="MenuTab"
-              smooth={true}
-              duration={1000}
-              className="flex flex-row z-30 bg-white text-gray-900 font-semibold md:hidden sticky bottom-2 w-14 rounded-full cursor-pointer"
-            >
-              {/* <p className="text-xl">Scroll Up</p> */}
-              <RiArrowUpCircleFill className="text-6xl mx-auto justify-items-center" />
-            </Link>
-          </HideScroll>
-          <HideScroll variant="down">
-            <Link
-              to="Banner"
-              smooth={true}
-              duration={1000}
-              className="justify-items-end z-30 bg-white text-gray-900 font-semibold hidden md:block sticky bottom-2 w-14 rounded-full cursor-pointer"
-            >
-              {/* <p className="text-xl">Scroll Up</p> */}
-              <RiArrowUpCircleFill className="text-6xl mx-auto justify-items-center" />
-            </Link>
-          </HideScroll>
-        </div>
+        <HideScroll variant="down">
+          <Link
+            to="Banner"
+            // to="MenuTab"
+            smooth={true}
+            duration={1000}
+            className="flex flex-row z-50 bg-white text-helloblue-700 font-semibold sticky bottom-2 w-14 rounded-full cursor-pointer"
+          >
+            {/* <p className="text-xl">Scroll Up</p> */}
+            <RiArrowUpCircleFill className="text-6xl mx-auto justify-items-center" />
+          </Link>
+        </HideScroll>
       ) : (
+        // <div>
+        //   {/* <HideScroll variant="down">
+        //     <Link
+        //       to="Banner"
+        //       smooth={true}
+        //       duration={1000}
+        //       className=" z-30 bg-white text-gray-900 font-semibold hidden md:block sticky bottom-2 w-14 rounded-full cursor-pointer"
+        //     >
+        //       <RiArrowUpCircleFill className="text-6xl mx-auto justify-items-center" />
+        //     </Link>
+        //   </HideScroll> */}
+        // </div>
         ""
       )}
     </div>

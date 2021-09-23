@@ -4,6 +4,7 @@ const keywords =
   "gatsby js" ||
   "nextjs" ||
   "next js" ||
+  "next.js" ||
   "javascript" ||
   "js" ||
   "css" ||
