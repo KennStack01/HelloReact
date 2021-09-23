@@ -1,8 +1,8 @@
 const keywords =
   "react" ||
+  "nextjs" ||
   "gatsby" ||
   "gatsby js" ||
-  "nextjs" ||
   "next js" ||
   "next.js" ||
   "javascript" ||
