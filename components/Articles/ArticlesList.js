@@ -3,7 +3,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import Article from "./Article";
 import Parser from "rss-parser";
 import rssList from "./rssList";
-import keywords from "./keywords";
+import keywords from "../keywords";
 import { RiArrowUpCircleFill } from "react-icons/ri";
 import { Link } from "react-scroll";
 import { HideScroll } from "react-hide-on-scroll";

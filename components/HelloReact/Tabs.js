@@ -43,7 +43,7 @@ const Tabs = ({ color }) => {
                   className={
                     "text-xs font-bold uppercase px-5 py-3 rounded block leading-normal " +
                     (openTab === 2
-                      ? "text-white bg-" + color + "-600"
+                      ? "text-white bg-" + "red" + "-600"
                       : "text-" + color + "-600 bg-white")
                   }
                   onClick={(e) => {

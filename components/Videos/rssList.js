@@ -1,0 +1,26 @@
+let rssURLs = [
+  "https://www.youtube.com/feeds/videos.xml?channel_id=UCqrILQNl5Ed9Dz6CGMyvMTQ",
+  "https://www.youtube.com/feeds/videos.xml?channel_id=UC29ju8bIPH5as8OGnQzwJyA",
+  "https://www.youtube.com/feeds/videos.xml?channel_id=UC8butISFwT-Wl7EV0hUK0BQ", //FCC doesn't fetch
+  "https://www.youtube.com/feeds/videos.xml?channel_id=UCoebwHSTvwalADTJhps0emA",
+  "https://www.youtube.com/feeds/videos.xml?channel_id=UCSJbGtTlrDami-tDGPUV9-w",
+  "https://www.youtube.com/feeds/videos.xml?channel_id=UCW5YeuERMmlnqo4oq8vwUpg",
+  "https://www.youtube.com/feeds/videos.xml?channel_id=UCbGZKLIHpox2l0whz6_RYyg",
+  "https://www.youtube.com/feeds/videos.xml?channel_id=UCslbYAoujyM6QzO0zkmd1qg",
+  "https://www.youtube.com/feeds/videos.xml?channel_id=UCvjgXvBlbQiydffZU7m1_aw",
+  "https://www.youtube.com/feeds/videos.xml?channel_id=UC80PWRj_ZU8Zu0HSMNVwKWw",
+  "https://www.youtube.com/feeds/videos.xml?channel_id=UCVTlvUkGslCV_h-nSAId8Sw",
+  "https://www.youtube.com/feeds/videos.xml?channel_id=UCZkjWyyLvzWeoVWEpRemrDQ",
+  "https://www.youtube.com/feeds/videos.xml?channel_id=UCP_lo1MFyx5IXDeD9s_6nUw",
+  "https://www.youtube.com/feeds/videos.xml?channel_id=UCsvMopMspsGw89AWim0FMfw",
+  "https://www.youtube.com/feeds/videos.xml?channel_id=UC-8QAzbLcRglXeN_MY9blyw",
+  "https://www.youtube.com/feeds/videos.xml?channel_id=UCz-BYvuntVRt_VpfR6FKXJw",
+  "https://www.youtube.com/feeds/videos.xml?channel_id=UCWv7vMbMWH4-V0ZXdmDpPBA",
+  "https://www.youtube.com/feeds/videos.xml?channel_id=UCsBjURrPoezykLs9EqgamOA",
+  "https://www.youtube.com/feeds/videos.xml?channel_id=UCtmYk7H-NNYLEe_LgBRYomA",
+  "https://www.youtube.com/feeds/videos.xml?channel_id=UCgdeMp2ZBnovi12THmLc47g",
+  "https://www.youtube.com/feeds/videos.xml?channel_id=UCuB4FSBjofpagXnBlHQUocA",
+  "https://www.youtube.com/feeds/videos.xml?channel_id=UCzoVCacndDCfGDf41P-z0iA",
+  "https://www.youtube.com/feeds/videos.xml?channel_id=UCfYTu_qAO5T7a-8rC_74Ypw",
+];
+export default rssURLs;
