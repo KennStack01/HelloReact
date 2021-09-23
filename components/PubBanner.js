@@ -6,7 +6,10 @@ import { BiDoorOpen } from "react-icons/bi";
 
 const PubBanner = () => {
   return (
-    <div className="flex flex-row justify-between mx-auto bg-helloblue-500 py-5 md:py-5 px-4 text-white rounded-3xl">
+    <div
+      className="flex flex-row justify-between mx-auto bg-helloblue-500 py-5 md:py-5 px-4 text-white rounded-3xl"
+      id="Banner"
+    >
       <div className="flex flex-row">
         <div className="hidden md:block md:text-8xl mx-4 my-auto">
           {" "}

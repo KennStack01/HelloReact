@@ -4,6 +4,9 @@ import Article from "./Article";
 import Parser from "rss-parser";
 import rssList from "./rssList";
 import keywords from "./keywords";
+import { RiArrowUpCircleFill } from "react-icons/ri";
+import { Link } from "react-scroll";
+import { HideScroll } from "react-hide-on-scroll";
 
 const ArticlesList = () => {
   const [articles, setArticles] = useState([]);
@@ -66,8 +69,6 @@ const ArticlesList = () => {
 
   return (
     <div>
-      {/* <h1 className="font-semibold"> Welcome to Articles 💪 </h1> */}
-
       <InfiniteScroll
         className="py-6"
         dataLength={articles.length} //This is important field to render the next data
@@ -86,13 +87,13 @@ const ArticlesList = () => {
           </div>
         ) : (
           <div>
-            <div className=" md:mx-40 mx-2 md:my-6 my-2">
+            <div className=" md:mx-40 mx-2 md:mb-4 md:mt-2 my-2">
               <input
                 type="text"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder={`Type and Search`}
-                className="px-3 py-2 sticky top-0 placeholder-gray-400 text-blueGray-600 bg-white rounded text-sm outline-none focus:outline-none focus:ring-2 ring-1 ring-gray-300 focus:ring-helloblue-600 w-full"
+                className="px-3 py-2 sticky top-0 placeholder-gray-400 text-blueGray-600 bg-white rounded text-sm outline-none focus:outline-none focus:ring-2 ring-1 ring-gray-300 focus:ring-helloblue-400 w-full"
               />
             </div>
             <div className="md:grid grid-cols-3 mx-auto">
@@ -103,11 +104,15 @@ const ArticlesList = () => {
                   } else if (
                     article.title
                       .toLowerCase()
+                      .includes(searchTerm.toLowerCase()) ||
+                    article.link
+                      .toLowerCase()
                       .includes(searchTerm.toLowerCase())
                   ) {
                     return article;
                   }
                 })
+                .sort((a, b) => b.pubDate - a.pubDate)
                 .map((article) => (
                   <Article
                     key={article.title}
@@ -140,6 +145,34 @@ const ArticlesList = () => {
           ))
         )}
       </div> */}
+      {process.browser ? (
+        <div>
+          <HideScroll variant="down">
+            <Link
+              to="MenuTab"
+              smooth={true}
+              duration={1000}
+              className="flex flex-row z-30 bg-white text-gray-900 font-semibold md:hidden sticky bottom-2 w-14 rounded-full cursor-pointer"
+            >
+              {/* <p className="text-xl">Scroll Up</p> */}
+              <RiArrowUpCircleFill className="text-6xl mx-auto justify-items-center" />
+            </Link>
+          </HideScroll>
+          <HideScroll variant="down">
+            <Link
+              to="Banner"
+              smooth={true}
+              duration={1000}
+              className="justify-items-end z-30 bg-white text-gray-900 font-semibold hidden md:block sticky bottom-2 w-14 rounded-full cursor-pointer"
+            >
+              {/* <p className="text-xl">Scroll Up</p> */}
+              <RiArrowUpCircleFill className="text-6xl mx-auto justify-items-center" />
+            </Link>
+          </HideScroll>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };

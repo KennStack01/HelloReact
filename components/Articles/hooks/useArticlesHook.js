@@ -1,9 +1,13 @@
 // This is the hook for the articles component
 // Under Construction!
 
-// import Parser from "rss-parser";
-// import rssList from "../rssList";
-// import { useState, useEffect } from "react";
+import Parser from "rss-parser";
+import rssList from "../rssList";
+import { useState, useEffect } from "react";
+
+export default function useArticlesHook() {
+  return null;
+}
 
 // const useArticlesHook = () => {
 //   const [tempArticles, setTempArticles] = useState([]);
