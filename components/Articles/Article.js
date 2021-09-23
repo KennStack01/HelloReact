@@ -35,7 +35,7 @@ const Article = ({
         <div className="flex-grow m-auto text-gray-700 text-center mx-2">
           <div>
             <a href={`${link}`} target="__blank">
-              <h1 className="text-md font-semibold font-sans hover:text-helloblue-600">
+              <h1 className="text-md md:text-sm font-semibold font-sans hover:text-helloblue-600">
                 {title}
               </h1>
             </a>
@@ -62,7 +62,7 @@ const Article = ({
           </a>
           <button
             onClick={handleBookmark}
-            className="flex flex-row font-semibold rounded-lg bg-white text-helloblue-500 shadow-sm p-2 ml-4"
+            className="flex flex-row font-semibold rounded-lg bg-white text-helloblue-500  hover:shadow-sm shadow-md p-2 ml-4"
           >
             {/* <h3 className=" my-auto ml-2 mr-1">Read it</h3> */}
             <span className="text-2xl mx-1">

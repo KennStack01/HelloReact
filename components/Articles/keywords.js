@@ -13,6 +13,7 @@ const keywords =
   "props" ||
   "state" ||
   "use" ||
+  "redux" ||
   "hooks";
 
 export default keywords;

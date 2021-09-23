@@ -5,6 +5,7 @@ import VideosList from "../Videos/VideosList";
 import DocsList from "../Docs/DocsList";
 import EbooksList from "../E-Books/EBooksList";
 import WebsitesList from "../Websites/WebsitesList";
+import SnippetsList from "../Snippets/SnippetsList";
 
 const Tabs = ({ color }) => {
   const [openTab, setOpenTab] = React.useState(1);
@@ -74,7 +75,7 @@ const Tabs = ({ color }) => {
                   Docs
                 </a>
               </li>
-              <li className="-mb-px mx-2 md:mx-1 md:my-2 my-3 last:mr-0 flex-auto text-center col-span-2">
+              <li className="-mb-px mx-2 md:mx-1 md:my-2 my-3 last:mr-0 flex-auto text-center">
                 <a
                   className={
                     "text-xs font-bold uppercase px-5 py-3 rounded block leading-normal " +
@@ -112,13 +113,25 @@ const Tabs = ({ color }) => {
                   E-books
                 </a>
               </li>
-              <div className="md:my-auto md:mx-3 my-4 col-span-3">
-                <input
-                  type="text"
-                  placeholder={`Type and Search`}
-                  className="px-3 py-2 placeholder-gray-400 text-blueGray-600 bg-white rounded text-sm outline-none focus:outline-none focus:ring-2 focus:ring-helloblue-600 w-full"
-                />
-              </div>
+              <li className="-mb-px mx-2 md:mx-1 md:my-2 my-3 last:mr-0 flex-auto text-center">
+                <a
+                  className={
+                    "text-xs font-bold uppercase px-5 py-3 rounded block leading-normal " +
+                    (openTab === 6
+                      ? "text-white bg-" + color + "-600"
+                      : "text-" + color + "-600 bg-white")
+                  }
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setOpenTab(6);
+                  }}
+                  data-toggle="tab"
+                  href="#link6"
+                  role="tablist"
+                >
+                  Snippets
+                </a>
+              </li>
             </ul>
           </div>
           <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 rounded">
@@ -138,6 +151,9 @@ const Tabs = ({ color }) => {
                 </div>
                 <div className={openTab === 5 ? "block" : "hidden"} id="link5">
                   <EbooksList />
+                </div>
+                <div className={openTab === 6 ? "block" : "hidden"} id="link6">
+                  <SnippetsList />
                 </div>
               </div>
             </div>
