@@ -42,9 +42,13 @@ const VideosList = () => {
         const feed = await parser.parseURL(`https://cors.bridged.cc/${url}`);
         // const videoPost = filterPosts(feed.items, 5)
         const videoPost = feed.items.filter((item) => {
-          return item.title
-            .toLowerCase()
-            .includes(keywords.toLocaleLowerCase());
+          for (let i = 0; i < keywords.length; i++) {
+            return item.title.toLowerCase().includes(keywords[i]);
+          }
+          // return item.title
+          //   .toLowerCase()
+          //   .includes(keywords.forEach((keyword) => keyword.toLowerCase()));
+          // .includes(keywords.toLocaleLowerCase());
         });
         tempArray.push(...videoPost);
         setLoading(false);

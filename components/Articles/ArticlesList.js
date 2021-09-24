@@ -42,7 +42,9 @@ const ArticlesList = () => {
         const feed = await parser.parseURL(`https://cors.bridged.cc/${url}`);
         // const blogPosts = filterPosts(feed.items, 5)
         const blogPosts = feed.items.filter((item) => {
-          return item.title.toLowerCase().includes(keywords.toLowerCase());
+          for (let i = 0; i < keywords.length; i++) {
+            return item.title.toLowerCase().includes(keywords[i]);
+          }
         });
         tempArray.push(...blogPosts);
         setLoading(false);
