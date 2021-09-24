@@ -7,8 +7,10 @@ const keywords = [
   "next.js",
   "Styled Component",
   "javascript",
-  "js",
+  // "js",
   "css",
+  "tailwind css",
+  "tailwindcss",
   "html",
   "frontend",
   //   Start adding keywords here:
@@ -17,6 +19,8 @@ const keywords = [
   "use",
   "redux",
   "hooks",
+  "graphql",
+  "graph ql",
 ];
 
 export default keywords;

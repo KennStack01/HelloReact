@@ -22,7 +22,7 @@ const Video = ({
     <div className="mx-3 md:mx-5">
       <section className="flex flex-col container bg-mirage-400 rounded-lg shadow hover:shadow-sm md:h-80 h-76 w-72 m-auto my-4">
         <img
-          className="w-full h-40 md:h-48 object-cover object-center rounded-t-lg"
+          className="w-full h-40 md:h-48 object-cover object-center rounded-t-lg image-video"
           src={picturelURL}
           alt="blogImage"
         />

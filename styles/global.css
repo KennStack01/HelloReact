@@ -1,0 +1,12 @@
+/* Include Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.image-video {
+  @apply absolute w-full h-full transition-all duration-500 ease-in-out transform bg-center bg-cover;
+}
+
+.image-video:hover .image-video {
+  @apply scale-150;
+}

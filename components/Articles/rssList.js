@@ -11,5 +11,6 @@ let rssURLs = [
   "https://blog.bhanuteja.dev/rss.xml",
   "https://amanhimself.dev/rss.xml",
   "https://blog.rstankov.com/rss/",
+  "https://upmostly.com/feed",
 ];
 export default rssURLs;
