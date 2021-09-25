@@ -6,6 +6,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@dhaiwat10/react-link-preview": "^1.9.0",
     "moment": "^2.29.1",
     "moment-timezone": "^0.5.33",
     "next": "latest",

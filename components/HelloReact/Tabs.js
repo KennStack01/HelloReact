@@ -2,7 +2,6 @@ import React from "react";
 
 import ArticlesList from "../Articles/ArticlesList";
 import VideosList from "../Videos/VideosList";
-import DocsList from "../Docs/DocsList";
 import EbooksList from "../E-Books/EBooksList";
 import WebsitesList from "../Websites/WebsitesList";
 import SnippetsList from "../Snippets/SnippetsList";
@@ -70,10 +69,10 @@ const Tabs = ({ color }) => {
                     setOpenTab(3);
                   }}
                   data-toggle="tab"
-                  href="#link3"
+                  href="#link4"
                   role="tablist"
                 >
-                  Docs
+                  Websites
                 </a>
               </li>
               <li className="-mb-px mx-2 md:mx-1 md:my-1 my-2 last:mr-0 flex-auto text-center">
@@ -89,10 +88,10 @@ const Tabs = ({ color }) => {
                     setOpenTab(4);
                   }}
                   data-toggle="tab"
-                  href="#link4"
+                  href="#link5"
                   role="tablist"
                 >
-                  Websites
+                  E-books
                 </a>
               </li>
               <li className="-mb-px mx-2 md:mx-1 md:my-1 my-2 last:mr-0 flex-auto text-center">
@@ -106,25 +105,6 @@ const Tabs = ({ color }) => {
                   onClick={(e) => {
                     e.preventDefault();
                     setOpenTab(5);
-                  }}
-                  data-toggle="tab"
-                  href="#link5"
-                  role="tablist"
-                >
-                  E-books
-                </a>
-              </li>
-              <li className="-mb-px mx-2 md:mx-1 md:my-1 my-2 last:mr-0 flex-auto text-center">
-                <a
-                  className={
-                    "text-xs font-bold uppercase px-5 py-3 rounded block leading-normal " +
-                    (openTab === 6
-                      ? "text-white bg-" + color + "-600"
-                      : "text-" + color + "-600 bg-white")
-                  }
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setOpenTab(6);
                   }}
                   data-toggle="tab"
                   href="#link6"
@@ -145,15 +125,12 @@ const Tabs = ({ color }) => {
                   <VideosList />
                 </div>
                 <div className={openTab === 3 ? "block" : "hidden"} id="link3">
-                  <DocsList />
-                </div>
-                <div className={openTab === 4 ? "block" : "hidden"} id="link4">
                   <WebsitesList />
                 </div>
-                <div className={openTab === 5 ? "block" : "hidden"} id="link5">
+                <div className={openTab === 4 ? "block" : "hidden"} id="link4">
                   <EbooksList />
                 </div>
-                <div className={openTab === 6 ? "block" : "hidden"} id="link6">
+                <div className={openTab === 5 ? "block" : "hidden"} id="link5">
                   <SnippetsList />
                 </div>
               </div>

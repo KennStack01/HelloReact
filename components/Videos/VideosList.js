@@ -3,6 +3,7 @@ import Video from "./Video";
 import Parser from "rss-parser";
 import rssList from "./rssList";
 import keywords from "../keywords";
+
 import { RiArrowUpCircleFill } from "react-icons/ri";
 import { Link } from "react-scroll";
 import { HideScroll } from "react-hide-on-scroll";
@@ -124,10 +125,14 @@ const VideosList = () => {
             // to="MenuTab"
             smooth={true}
             duration={1000}
-            className="flex flex-row justify-center z-50 bg-white text-helloblue-700 font-semibold sticky bottom-2 w-14 rounded-full cursor-pointer"
+            className="sticky bottom-2 flex flex-row justify-between"
           >
-            {/* <p className="text-xl">Scroll Up</p> */}
-            <RiArrowUpCircleFill className="text-6xl mx-auto justify-items-center" />
+            <div></div>
+            <div></div>
+            <div className="z-50 flex flex-row-reverse bg-white text-helloblue-700 font-semibold w-14 rounded-full cursor-pointer">
+              {/* <p className="text-xl">Scroll Up</p> */}
+              <RiArrowUpCircleFill className="text-6xl mx-auto justify-items-center" />
+            </div>
           </Link>
         </HideScroll>
       ) : (
