@@ -62,7 +62,7 @@ const VideosList = () => {
     // console.log(tempArray);
   }, [rssList]);
 
-  console.log(videos);
+  // console.log(videos);
 
   return (
     <div>

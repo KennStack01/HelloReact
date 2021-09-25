@@ -62,7 +62,7 @@ const ArticlesList = () => {
     // console.log(tempArray);
   }, [rssList]);
 
-  console.log(articles);
+  // console.log(articles);
 
   // articles.forEach((article) => {
   //   console.log(article.link);
@@ -107,7 +107,7 @@ const ArticlesList = () => {
                 .sort((a, b) => b.pubDate - a.pubDate)
                 .map((article) => (
                   <Article
-                    key={article.title}
+                    key={article.title + Date.now()}
                     title={article.title}
                     pubDate={article.pubDate}
                     link={article.link}

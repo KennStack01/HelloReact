@@ -33,7 +33,7 @@ const WebsistesList = () => {
     setLoading(false);
   }, []);
 
-  console.log(websites);
+  // console.log(websites);
 
   return (
     <div>
