@@ -1,11 +1,11 @@
 import Head from "next/head";
-import TabsRender from "../components/HelloReactLayer/Tabs";
+import TabsRender from "../../components/ReactNewsLayer/Tabs";
 
-export default function Home() {
+export default function ReactNews() {
   return (
     <div className="flex flex-col justify-center min-h-screen py-2 md:mx-4">
       <Head>
-        <title>Welcome - HelloReact</title>
+        <title>React News - HelloReact</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex flex-col w-full flex-1 md:px-20 text-center">

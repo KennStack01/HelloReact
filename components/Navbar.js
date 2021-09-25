@@ -27,7 +27,7 @@ const Navbar = () => {
         </div>
         {/* React News */}
         <div className="hover:bg-hellosidebarblue-400 hover:shadow-lg p-2 my-2 rounded-md">
-          <Link href="/">
+          <Link href="/reactNews">
             <a>
               <div className="flex flex-row my-auto font-medium">
                 <div className="text-2xl">

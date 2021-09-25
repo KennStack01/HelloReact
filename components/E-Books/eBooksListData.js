@@ -27,7 +27,15 @@ let eBooksURLs = [
     title: "Speaking JavaScript",
     link: "http://speakingjs.com/",
     pictureURL: "http://speakingjs.com/es5/orm_front_cover.jpg",
-    author: "Dr Axel R.",
+    author: "Dr. Axel Rauschmayer",
+    isFree: true,
+  },
+  {
+    title: "JavaScript for impatient programmers",
+    link: "https://exploringjs.com/impatient-js/index.html",
+    pictureURL:
+      "https://exploringjs.com/impatient-js/img-homepage/cover-homepage.jpg",
+    author: "Dr. Axel Rauschmayer",
     isFree: true,
   },
 ];

@@ -22,7 +22,7 @@ const EBook = ({ pictureURL, title, pubDate, link, author, isFree }) => {
             className={
               !isFree
                 ? "hidden"
-                : `block bg-red-500 absolute px-2 py-1 -mt-20 rounded text-white font-semibold`
+                : `block bg-red-500 absolute px-2 py-1 -mt-20 rounded-r text-white font-semibold`
             }
           >
             free
