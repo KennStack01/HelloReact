@@ -104,7 +104,7 @@ const ForumsList = () => {
                     return Forum;
                   }
                 })
-                .sort((a, b) => b.pubDate - a.pubDate)
+                .sort((a, b) => a.pubDate - b.pubDate)
                 .map((forum) => (
                   <Forum
                     key={forum.id}
@@ -123,7 +123,7 @@ const ForumsList = () => {
               // to="MenuTab"
               smooth={true}
               duration={1000}
-              className="sticky bottom-2 flex flex-row justify-between"
+              className="sticky bottom-4 flex flex-row justify-between"
             >
               <div></div>
               <div></div>

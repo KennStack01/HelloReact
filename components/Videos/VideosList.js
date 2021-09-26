@@ -125,7 +125,7 @@ const VideosList = () => {
             // to="MenuTab"
             smooth={true}
             duration={1000}
-            className="sticky bottom-2 flex flex-row justify-between"
+            className="sticky bottom-4 flex flex-row justify-between"
           >
             <div></div>
             <div></div>

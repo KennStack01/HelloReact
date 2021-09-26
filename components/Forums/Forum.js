@@ -15,7 +15,7 @@ const Forum = ({ title, pubDate, link }) => {
 
   return (
     // <div className="flex flex-col p-2 md:p-3 m-3 rounded-b-md md:rounded-lg hover:border border-l-2 border-yellow-700 text-gray-800">
-    <div className="flex flex-col p-2 md:p-3 m-3 rounded-l-md md:rounded-lg border-l-2 hover:border shadow-sm hover:shadow-md border-red-400 text-gray-800">
+    <div className="flex flex-col p-2 md:p-3 mx-1 my-3 md:m-3 rounded-l-md md:rounded-lg border-l-2 hover:border shadow-sm hover:shadow-md border-red-400 text-gray-800">
       <a href={`${link}`} target="__blank" className="flex flex-col">
         <div className="text-5xl mx-auto" style={{ color: "#ff4301" }}>
           <SiReddit />
@@ -40,9 +40,9 @@ const Forum = ({ title, pubDate, link }) => {
         </a>
         <button
           onClick={handleBookmark}
-          className="flex flex-row justify-end font-semibold rounded-lg bg-white text-helloblue-500 hover:shadow-sm shadow-md p-2 ml-4 mx-auto"
+          className="flex flex-row justify-end font-semibold rounded-lg bg-white text-green-600 hover:shadow-sm shadow-md p-2 ml-4 mx-auto"
         >
-          <h3 className=" my-auto ml-2 mr-1 text-xs text-helloblue-500">
+          <h3 className=" my-auto ml-2 mr-1 text-xs text-green-600">
             Bookmark
           </h3>
           <span className="text-xl mx-1">

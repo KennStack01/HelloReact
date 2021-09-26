@@ -14,7 +14,6 @@ const ArticlesList = () => {
 
   let tempURL;
   let tempArray = [];
-  let sortedArray = [];
 
   function shuffleArray(array) {
     for (var i = array.length - 1; i > 0; i--) {
@@ -29,6 +28,18 @@ const ArticlesList = () => {
     return array;
   }
 
+  const removeDuplicateObject = (fn) => {
+    const sortedArray = new Set();
+
+    const orderedArray = fn.filter((el) => {
+      const duplicate = sortedArray.has(el.id);
+      sortedArray.add(el.id);
+      return !duplicate;
+    });
+
+    return orderedArray;
+  };
+
   const fetchArticles = async (url, parser) => {
     const feed = await parser.parseURL(`https://cors.bridged.cc/${url}`);
     // const blogPosts = filterPosts(feed.items, 5)
@@ -37,8 +48,10 @@ const ArticlesList = () => {
         return item.title.toLowerCase().includes(keywords[i]);
       }
     });
+
     tempArray.push(...blogPosts);
     setLoading(false);
+
     // setArticles([...articles, ...blogPosts]);
   };
 
@@ -58,11 +71,13 @@ const ArticlesList = () => {
       // shuffle array
       tempArray = shuffleArray(tempArray);
     });
-    setArticles(tempArray);
+
+    const arrayWithoutDuplicate = removeDuplicateObject(tempArray);
+    setArticles(arrayWithoutDuplicate);
     // console.log(tempArray);
   }, [rssList]);
 
-  // console.log(articles);
+  console.log(articles);
 
   // articles.forEach((article) => {
   //   console.log(article.link);
@@ -124,7 +139,7 @@ const ArticlesList = () => {
               // to="MenuTab"
               smooth={true}
               duration={1000}
-              className="sticky bottom-2 flex flex-row justify-between"
+              className="sticky bottom-4 flex flex-row justify-between"
             >
               <div></div>
               <div></div>
