@@ -7,7 +7,7 @@ import { useReadingTime } from "react-reading-time-estimator";
 const News = ({
   picturelURL = "https://industrywired.b-cdn.net/wp-content/uploads/2020/06/Software-Companies.jpeg",
   title,
-  pubDate,
+  pubDate = "",
   link,
   content = "",
 }) => {
@@ -44,7 +44,12 @@ const News = ({
               <p className="text-xs">
                 {" "}
                 {/* {new Date(post.dateAdded).toDateString()}{" "} */}
-                <Moment date={dateToFormat} format="MMM Do, YYYY" />
+                {pubDate === "" ? (
+                  ""
+                ) : (
+                  <Moment format="MMM DD, YYYY">{dateToFormat}</Moment>
+                )}
+                {/* <Moment date={dateToFormat} format="MMM Do, YYYY" /> */}
                 {" • "}
                 <span className="text-xs">{text}</span>
               </p>
