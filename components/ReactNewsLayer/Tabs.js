@@ -1,9 +1,8 @@
 import React from "react";
 
-import ArticlesList from "../Articles/ArticlesList";
-import WebsitesList from "../Websites/WebsitesList";
-import SnippetsList from "../Snippets/SnippetsList";
 import ForumsList from "../Forums/forumsList";
+import ConferencesList from "../Conferences/ConferencesList";
+import NewsList from "../News/NewsList";
 
 const Tabs = ({ color }) => {
   const [openTab, setOpenTab] = React.useState(1);
@@ -80,10 +79,10 @@ const Tabs = ({ color }) => {
             <div className="px-4 py-5 flex-auto">
               <div className="tab-content tab-space">
                 <div className={openTab === 1 ? "block" : "hidden"} id="link1">
-                  <ArticlesList />
+                  <NewsList />
                 </div>
                 <div className={openTab === 2 ? "block" : "hidden"} id="link3">
-                  <WebsitesList />
+                  <ConferencesList />
                 </div>
                 <div className={openTab === 3 ? "block" : "hidden"} id="link2">
                   <ForumsList />

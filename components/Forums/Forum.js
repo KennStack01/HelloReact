@@ -31,7 +31,7 @@ const Forum = ({ title, pubDate, link }) => {
         <a
           href={`${link}`}
           target="__blank"
-          className="flex flex-row mx-auto text-xs text-helloblue-700 font-bold bg-helloyellow-500 hover:shadow rounded-xl p-2"
+          className="flex flex-row mx-auto text-xs text-helloblue-700 font-bold bg-helloyellow-500 hover:bg-helloyellow-400 rounded-xl p-2"
         >
           <p className="my-auto">Open</p>
           <div className="text-md my-auto">

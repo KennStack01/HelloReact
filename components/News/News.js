@@ -3,9 +3,9 @@ import { BsBoxArrowUpRight, BsBookmark, BsBookmarkFill } from "react-icons/bs";
 import Moment from "react-moment";
 import { useReadingTime } from "react-reading-time-estimator";
 
-// This is the Article Component
-const Article = ({
-  picturelURL = "https://tutsnode.com/wp-content/uploads/2020/12/The-Creative-React-and-Redux-Course.jpg",
+// This is the News Component
+const News = ({
+  picturelURL = "https://industrywired.b-cdn.net/wp-content/uploads/2020/06/Software-Companies.jpeg",
   title,
   pubDate,
   link,
@@ -30,7 +30,7 @@ const Article = ({
         <img
           className="w-full h-40 md:h-48 object-cover object-center rounded-t-lg"
           src={picturelURL}
-          alt="blogImage"
+          alt="News Image"
         />
         <div className="flex-grow m-auto text-gray-700 text-center mx-2">
           <div>
@@ -75,4 +75,4 @@ const Article = ({
   );
 };
 
-export default Article;
+export default News;
