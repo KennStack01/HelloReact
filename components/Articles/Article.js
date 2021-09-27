@@ -25,8 +25,8 @@ const Article = ({
   } = useReadingTime(content);
 
   return (
-    <div className="mx-3 md:mx-5">
-      <section className="flex flex-col container bg-mirage-400 rounded-lg shadow hover:shadow-sm md:h-80 h-76 w-72 m-auto my-4">
+    <div className="mx-2">
+      <section className="flex flex-col container bg-mirage-400 rounded-lg shadow hover:shadow-sm md:h-80 h-76 w-6/7 m-auto my-4">
         <img
           className="w-full h-40 md:h-48 object-cover object-center rounded-t-lg"
           src={picturelURL}
@@ -35,7 +35,7 @@ const Article = ({
         <div className="flex-grow m-auto text-gray-700 text-center mx-2">
           <div>
             <a href={`${link}`} target="__blank">
-              <h1 className="text-md md:text-sm font-semibold font-sans hover:text-helloblue-600">
+              <h1 className="text-md md:text-sm font-medium md:font-semibold hover:text-helloblue-600">
                 {title}
               </h1>
             </a>
@@ -53,7 +53,7 @@ const Article = ({
         </div>
         <div className="flex flex-row m-auto my-2">
           <a href={`${link}`} target="__blank" className="items-center">
-            <div className="flex flex-row font-semibold bg-helloyellow-600 text-gray-900 p-2 rounded  hover:drop-shadow-md">
+            <div className="flex flex-row font-semibold bg-helloyellow-600 text-gray-900 p-2 rounded  hover:bg-helloyellow-500">
               <h3 className=" my-auto ml-2 mr-1">Read it</h3>
               <span className="text-xl ml-1 mr-2">
                 <BsBoxArrowUpRight />

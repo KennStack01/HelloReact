@@ -55,7 +55,7 @@ const WebsistesList = () => {
                 className="px-3 py-2 sticky top-0 placeholder-gray-400 text-blueGray-600 bg-white rounded text-sm outline-none focus:outline-none focus:ring-2 ring-1 ring-gray-300 focus:ring-helloblue-400 w-full"
               />
             </div>
-            <div className="md:grid grid-cols-3 mx-auto">
+            <div className="flex flex-col md:grid grid-cols-3 mx-auto">
               {websites
                 .filter((website) => {
                   if (searchTerm === "") {

@@ -72,8 +72,8 @@ const ArticlesList = () => {
       tempArray = shuffleArray(tempArray);
     });
 
-    const arrayWithoutDuplicate = removeDuplicateObject(tempArray);
-    setArticles(arrayWithoutDuplicate);
+    tempArray = removeDuplicateObject(tempArray);
+    setArticles(tempArray);
     // console.log(tempArray);
   }, [rssList]);
 

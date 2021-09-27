@@ -10,8 +10,8 @@ const EBook = ({ pictureURL, title, pubDate, link, author, isFree }) => {
   };
 
   return (
-    <div className="mx-3 md:mx-5">
-      <section className="flex flex-col container bg-mirage-400 rounded-lg shadow hover:shadow-sm md:h-80 h-76 w-72 m-auto my-4">
+    <div className="mx-2">
+      <section className="flex flex-col container bg-mirage-400 rounded-lg shadow hover:shadow-sm md:h-80 h-76 w-6/7 m-auto my-4">
         <div>
           <img
             className="w-full h-40 md:h-48 object-cover object-center rounded-t-lg image-video"
