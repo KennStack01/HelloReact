@@ -7,6 +7,7 @@ import {
   IoIosArrowBack,
   IoIosArrowForward,
 } from "react-icons/io";
+import { FiLogIn } from "react-icons/fi";
 import UserInfo from "./UserInfo";
 // import { useSpring, animated } from "react-spring";
 
@@ -19,9 +20,17 @@ const Sidebar = () => {
         <div
           className={`flex flex-col justify-between text-white bg-hellosidebarblue-500 w-3/5 md:w-1/6 h-screen max-h-screen md:sticky fixed z-50 md:z-0 left-0 bottom-0 top-0`}
         >
-          {/* user info */}
+          {/* user info, thisi shows based on User Auth */}
           <div>
-            <UserInfo />
+            <Link href="/login">
+              <div className="flex flex-row justify-center font-medium text-md mx-7 my-2 hover:shadow p-3 hover:bg-hellosidebarblue-400 rounded cursor-pointer">
+                <h2 className="mx-2">Login</h2>
+                <div className="my-auto text-2xl">
+                  <FiLogIn />
+                </div>
+              </div>
+            </Link>
+            {/* <UserInfo /> */}
           </div>
           <div>
             {/* Navbar */}

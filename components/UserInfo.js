@@ -9,7 +9,7 @@ const UserInfo = () => {
         src={profilePic}
         alt="Picture of the author"
         placeholder="blur"
-        placeholderStyle={{ rounded: "100%" }}
+        placeholderstyle={{ rounded: "100%" }}
         width={50}
         height={50}
         className="rounded-full"
