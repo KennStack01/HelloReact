@@ -6,9 +6,9 @@ import Image from "next/image";
 import { FcGoogle } from "react-icons/fc";
 import { FaTwitter, FaGithub } from "react-icons/fa";
 
-export default function Auth() {
+export default function Login() {
   return (
-    <div className="md:flex flex-row my-8 md:my-10 mx-auto p-4 rounded shadow bg-gray-50 md:w-3/5">
+    <div className="md:flex flex-row my-4 md:my-6 mx-auto p-4">
       <div className="items-center mx-auto justify-center rounded-lg py-5 px-4 sm:px-6 lg:px-8">
         <div>
           <h1 className="my-3 text-center text-lg font-semibold text-gray-600">
