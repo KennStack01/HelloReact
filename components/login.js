@@ -15,6 +15,18 @@ export default function Login() {
             Login
           </h1>
           <div className="flex flex-col">
+            {/* Github */}
+            <button
+              className="bg-white shadow-sm hover:shadow-lg mx-auto px-10 font-semibold py-2 my-3 rounded-lg"
+              style={{ background: "#211F1F" }}
+            >
+              <div className="flex flex-row text-white">
+                <FaGithub className="my-auto text-3xl" />
+                <h3 className=" text-md font-medium my-auto mx-2">
+                  Login with Github
+                </h3>
+              </div>
+            </button>
             {/* Google */}
             <button className="bg-white shadow-sm hover:shadow-lg mx-auto px-10 font-semibold py-2 my-3 rounded-lg">
               <div className="flex flex-row ">
@@ -33,18 +45,6 @@ export default function Login() {
                 <FaTwitter className="my-auto text-3xl" />
                 <h3 className="text-md font-medium my-auto mx-2">
                   Login with Twitter
-                </h3>
-              </div>
-            </button>
-            {/* Github */}
-            <button
-              className="bg-white shadow-sm hover:shadow-lg mx-auto px-10 font-semibold py-2 my-3 rounded-lg"
-              style={{ background: "#211F1F" }}
-            >
-              <div className="flex flex-row text-white">
-                <FaGithub className="my-auto text-3xl" />
-                <h3 className=" text-md font-medium my-auto mx-2">
-                  Login with Github
                 </h3>
               </div>
             </button>
