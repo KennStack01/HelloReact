@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import Link from "next/link";
 import Navbar from "./Navbar";
 import { GoSettings } from "react-icons/go";
@@ -8,15 +8,17 @@ import {
   IoIosArrowForward,
 } from "react-icons/io";
 import { FiLogIn } from "react-icons/fi";
-import UserInfo from "./UserInfo";
+import UserInfo from "./Account";
 // import { useSpring, animated } from "react-spring";
 
 import { Dialog, Transition } from "@headlessui/react";
+import { supabase } from "../utils/supabaseClient";
+
 import Login from "./Auth";
 
 const Sidebar = () => {
   const [isSideBarHidden, setSideBarHidden] = useState(true);
-  let [isOpen, setIsOpen] = useState(true);
+  let [isOpen, setIsOpen] = useState(false);
 
   function closeModal() {
     setIsOpen(false);
@@ -24,6 +26,17 @@ const Sidebar = () => {
 
   function openModal() {
     setIsOpen(true);
+  }
+
+  const [isUserLogged, setUserLoggedState] = useState(true);
+  useEffect(() => {
+    setUserLoggedState(checkUser());
+  }, []);
+
+  async function checkUser() {
+    const user = supabase.auth.user();
+    console.log(user !== null);
+    return user !== null;
   }
 
   return (
@@ -88,14 +101,18 @@ const Sidebar = () => {
                 </Dialog>
               </Transition>
             </div>
-            <div onClick={openModal}>
-              <div className="flex flex-row justify-center font-medium text-md mx-7 my-2 hover:shadow p-3 hover:bg-hellosidebarblue-400 rounded cursor-pointer">
-                <h2 className="mx-2">Login</h2>
-                <div className="my-auto text-2xl">
-                  <FiLogIn />
+            {isUserLogged ? (
+              <UserInfo />
+            ) : (
+              <div onClick={openModal}>
+                <div className="flex flex-row justify-center font-medium text-md mx-7 my-2 hover:shadow p-3 hover:bg-hellosidebarblue-400 rounded cursor-pointer">
+                  <h2 className="mx-2">Login</h2>
+                  <div className="my-auto text-2xl">
+                    <FiLogIn />
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
             {/* <Link href="/login">
               <div className="flex flex-row justify-center font-medium text-md mx-7 my-2 hover:shadow p-3 hover:bg-hellosidebarblue-400 rounded cursor-pointer">
                 <h2 className="mx-2">Login</h2>
