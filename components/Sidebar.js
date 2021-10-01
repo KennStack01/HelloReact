@@ -12,7 +12,7 @@ import UserInfo from "./UserInfo";
 // import { useSpring, animated } from "react-spring";
 
 import { Dialog, Transition } from "@headlessui/react";
-import Login from "./login";
+import Login from "./Auth";
 
 const Sidebar = () => {
   const [isSideBarHidden, setSideBarHidden] = useState(true);

@@ -77,7 +77,7 @@ const NewsList = () => {
     // console.log(tempArray);
   }, [rssList]);
 
-  console.log(news);
+  // console.log(news);
 
   // news.forEach((News) => {
   //   console.log(News.link);
