@@ -101,9 +101,9 @@ const Sidebar = () => {
                 </Dialog>
               </Transition>
             </div>
-            {isUserLogged ? (
+            {isUserLogged === true ? (
               <UserInfo />
-            ) : (
+            ) : isUserLogged === false ? (
               <div onClick={openModal}>
                 <div className="flex flex-row justify-center font-medium text-md mx-7 my-2 hover:shadow p-3 hover:bg-hellosidebarblue-400 rounded cursor-pointer">
                   <h2 className="mx-2">Login</h2>
@@ -112,6 +112,8 @@ const Sidebar = () => {
                   </div>
                 </div>
               </div>
+            ) : (
+              <UserInfo />
             )}
             {/* <Link href="/login">
               <div className="flex flex-row justify-center font-medium text-md mx-7 my-2 hover:shadow p-3 hover:bg-hellosidebarblue-400 rounded cursor-pointer">

@@ -11,6 +11,8 @@ function classNames(...classes) {
 
 const logout = async () => {
   const { error } = await supabase.auth.signOut();
+
+  await console.log("User logged out!");
 };
 
 const UserOptions = () => {
