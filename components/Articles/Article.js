@@ -2,6 +2,10 @@ import React from "react";
 import { BsBoxArrowUpRight, BsBookmark, BsBookmarkFill } from "react-icons/bs";
 import Moment from "react-moment";
 import { useReadingTime } from "react-reading-time-estimator";
+import { supabase } from "../../utils/supabaseClient";
+import toast, { Toaster } from "react-hot-toast";
+
+const notify = () => toast("Here is your toast.");
 
 // This is the Article Component
 const Article = ({
@@ -12,8 +16,24 @@ const Article = ({
   content = "",
 }) => {
   const [isBookmarked, setBookmarked] = React.useState(false);
+  const [bookmark, setBookmark] = React.useState([]);
+
   const handleBookmark = () => {
+    console.log({ title, picturelURL, link, pubDate });
     setBookmarked(!isBookmarked);
+  };
+
+  const createBookmark = async () => {
+    const bookmark = {
+      title,
+      picturelURL,
+      link,
+      pubDate,
+    };
+
+    await supabase.from("articles").insert([bookmark]).single();
+    await setBookmarked(true);
+    await notify();
   };
 
   const dateToFormat = new Date(pubDate);
@@ -61,7 +81,8 @@ const Article = ({
             </div>
           </a>
           <button
-            onClick={handleBookmark}
+            // onClick={handleBookmark}
+            onClick={createBookmark}
             className="flex flex-row font-semibold rounded-lg bg-white text-helloblue-500  hover:shadow-sm shadow-md p-2 ml-4"
           >
             {/* <h3 className=" my-auto ml-2 mr-1">Read it</h3> */}

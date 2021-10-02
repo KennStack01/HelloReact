@@ -2,7 +2,7 @@ import React from "react";
 
 import ArticlesList from "../Articles/ArticlesList";
 import VideosList from "../Videos/VideosList";
-import WebsitesList from "../Websites/WebsitesList";
+import ForumsList from "../Forums/forumsList";
 import SnippetsList from "../Snippets/SnippetsList";
 
 const Tabs = ({ color }) => {
@@ -106,7 +106,7 @@ const Tabs = ({ color }) => {
                   <VideosList />
                 </div>
                 <div className={openTab === 3 ? "block" : "hidden"} id="link3">
-                  <WebsitesList />
+                  <ForumsList />
                 </div>
                 <div className={openTab === 4 ? "block" : "hidden"} id="link5">
                   <SnippetsList />

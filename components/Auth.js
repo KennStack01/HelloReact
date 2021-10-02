@@ -51,27 +51,33 @@ export default function Auth() {
             </button>
 
             {/* Google */}
-            {/* <button className="bg-white outline-none shadow-sm hover:shadow-lg mx-auto px-10 font-semibold py-2 my-3 rounded-lg">
+            <button className="bg-white outline-none shadow-sm hover:shadow-lg mx-auto px-10 font-semibold py-2 my-3 rounded-lg">
               <div className="flex flex-row ">
                 <FcGoogle className="my-auto text-3xl" />
                 <h3 className="text-gray-800 text-md font-medium my-auto mx-2">
-                  Login with Google
+                  Login with Google{" "}
+                  <span className="text-xs italic text-black bg-gray-300 px-1 rounded">
+                    soon
+                  </span>
                 </h3>
               </div>
-            </button> */}
+            </button>
 
             {/* Twitter */}
-            {/* <button
+            <button
               className="bg-white outline-none shadow-sm hover:shadow-lg mx-auto px-10 font-semibold py-2 my-3 rounded-lg"
               style={{ background: "#1DA1F2" }}
             >
               <div className="flex flex-row text-white ">
                 <FaTwitter className="my-auto text-3xl" />
                 <h3 className="text-md font-medium my-auto mx-2">
-                  Login with Twitter
+                  Login with Twitter{" "}
+                  <span className="text-xs italic text-black bg-gray-300 px-1 rounded">
+                    soon
+                  </span>
                 </h3>
               </div>
-            </button> */}
+            </button>
           </div>
         </div>
       </div>
