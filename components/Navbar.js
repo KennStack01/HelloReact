@@ -42,7 +42,7 @@ const Navbar = () => {
         </div>
         {/* My Bookmark */}
         <div className="hover:bg-hellosidebarblue-400 hover:shadow-lg p-2 my-2 rounded-md">
-          <Link href="/">
+          <Link href="/myBookmarks">
             <a>
               <div className="flex flex-row my-auto font-medium">
                 <div className="text-2xl">

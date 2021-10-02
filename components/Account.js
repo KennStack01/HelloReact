@@ -5,7 +5,6 @@ import { supabase } from "../utils/supabaseClient";
 import UserOptions from "./UserOptions";
 
 const UserInfo = () => {
-  const [loading, setLoading] = React.useState(true);
   const [user, setUser] = useState(null);
 
   useEffect(() => {

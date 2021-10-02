@@ -47,22 +47,21 @@ const EBook = ({ pictureURL, title, pubDate, link, author, isFree }) => {
         </div>
         <div className="flex flex-row m-auto my-2">
           <a href={`${link}`} target="__blank" className="items-center">
-            <div className="flex flex-row font-semibold bg-helloblue-500 text-white p-2 rounded  hover:drop-shadow-md">
+            <div className="flex flex-row font-semibold bg-helloblue-500 hover:bg-helloblue-400 text-white p-2 rounded  hover:drop-shadow-md">
               <h3 className=" my-auto ml-2 mr-1">Open it</h3>
               <span className="text-3xl my-auto ml-1 mr-2">
                 <ImBook />
               </span>
             </div>
           </a>
-          <button
+          {/* <button
             onClick={handleBookmark}
             className="flex flex-row font-semibold rounded-lg bg-white text-helloblue-500  hover:shadow-sm shadow-md p-2 ml-4"
           >
-            {/* <h3 className=" my-auto ml-2 mr-1">Read it</h3> */}
             <span className="text-2xl mx-1">
               {isBookmarked ? <BsBookmarkFill /> : <BsBookmark />}
             </span>
-          </button>
+          </button> */}
         </div>
       </section>
     </div>
