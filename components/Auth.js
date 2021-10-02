@@ -20,7 +20,6 @@ export default function Auth() {
       const { user, session, error } = await supabase.auth.signIn({
         provider: "github",
       });
-
       notify();
     } catch (error) {
       console.log(error.message);

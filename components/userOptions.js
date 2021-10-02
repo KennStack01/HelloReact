@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { BsThreeDots } from "react-icons/bs";
+import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaUserEdit } from "react-icons/fa";
 import { HiOutlineLogout } from "react-icons/hi";
 import { Menu, Transition } from "@headlessui/react";
@@ -12,15 +12,15 @@ function classNames(...classes) {
 const logout = async () => {
   const { error } = await supabase.auth.signOut();
 
-  await console.log("User logged out!");
+  console.log("User logged out!");
 };
 
 const UserOptions = () => {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
-        <Menu.Button className="inline-flex w-full p-3 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
-          <BsThreeDots className="mx-auto" aria-hidden="true" />
+        <Menu.Button className="inline-flex w-full p-1 text-sm font-medium text-white rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+          <BsThreeDotsVertical className="mx-auto" aria-hidden="true" />
         </Menu.Button>
       </div>
       <Transition
@@ -34,7 +34,7 @@ const UserOptions = () => {
       >
         <Menu.Items className="absolute right-0 w-36 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="px-1 py-1 ">
-            <Menu.Item>
+            {/* <Menu.Item>
               {({ active }) => (
                 <button
                   className={`${
@@ -49,7 +49,7 @@ const UserOptions = () => {
                   Edit Profile
                 </button>
               )}
-            </Menu.Item>
+            </Menu.Item> */}
             <Menu.Item>
               {({ active }) => (
                 <button

@@ -21,6 +21,7 @@ const UserInfo = () => {
   async function checkUser() {
     const user = supabase.auth.user();
     setUser(user);
+    console.log(user);
   }
 
   // console.log(user?.user_metadata?.avatar_url);
@@ -51,7 +52,7 @@ const UserInfo = () => {
       /> */}
       <div className="flex flex-col mx-auto my-auto">
         <h3 className="font-medium text-sm md:text-xs">{`@${developer.name}`}</h3>
-        <p className="text-xs font-light">Software Engineer</p>
+        {/* <p className="text-xs font-light">Software Engineer</p> */}
       </div>
       <div className="my-auto">
         <UserOptions />

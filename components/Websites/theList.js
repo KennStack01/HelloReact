@@ -27,5 +27,6 @@ let rssURLs = [
   "https://react-dnd.github.io/react-dnd/about",
   "https://madewithreactjs.com/",
   "https://www.gatsbyjs.com/",
+  "https://www.reactjsvideos.com/search",
 ];
 export default rssURLs;

@@ -19,6 +19,7 @@ import Login from "./Auth";
 const Sidebar = () => {
   const [isSideBarHidden, setSideBarHidden] = useState(true);
   let [isOpen, setIsOpen] = useState(false);
+  const [session, setSession] = useState(null);
 
   function closeModal() {
     setIsOpen(false);
@@ -28,16 +29,13 @@ const Sidebar = () => {
     setIsOpen(true);
   }
 
-  const [isUserLogged, setUserLoggedState] = useState(true);
   useEffect(() => {
-    setUserLoggedState(checkUser());
-  }, []);
+    setSession(supabase.auth.session());
 
-  async function checkUser() {
-    const user = supabase.auth.user();
-    console.log(user !== null);
-    return user !== null;
-  }
+    supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+    });
+  }, []);
 
   return (
     <>
@@ -45,7 +43,7 @@ const Sidebar = () => {
         <div
           className={`flex flex-col justify-between text-white bg-hellosidebarblue-500 w-3/5 md:w-1/6 h-screen max-h-screen md:sticky fixed z-40 md:z-0 left-0 bottom-0 top-0`}
         >
-          {/* user info, thisi shows based on User Auth */}
+          {/* user info, this shows based on User Auth */}
           <div>
             <div>
               {/* <div className="fixed inset-0 flex items-center justify-center">
@@ -101,9 +99,8 @@ const Sidebar = () => {
                 </Dialog>
               </Transition>
             </div>
-            {isUserLogged === true ? (
-              <UserInfo />
-            ) : isUserLogged === false ? (
+
+            {!session ? (
               <div onClick={openModal}>
                 <div className="flex flex-row justify-center font-medium text-md mx-7 my-2 hover:shadow p-3 hover:bg-hellosidebarblue-400 rounded cursor-pointer">
                   <h2 className="mx-2">Login</h2>
@@ -115,15 +112,6 @@ const Sidebar = () => {
             ) : (
               <UserInfo />
             )}
-            {/* <Link href="/login">
-              <div className="flex flex-row justify-center font-medium text-md mx-7 my-2 hover:shadow p-3 hover:bg-hellosidebarblue-400 rounded cursor-pointer">
-                <h2 className="mx-2">Login</h2>
-                <div className="my-auto text-2xl">
-                  <FiLogIn />
-                </div>
-              </div>
-            </Link> */}
-            {/* <UserInfo /> */}
           </div>
           <div>
             {/* Navbar */}

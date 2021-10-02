@@ -59,7 +59,7 @@ const ForumsList = () => {
       //   tempArray = shuffleArray(tempArray);
     });
     setForums(tempArray);
-    console.log(tempArray);
+    // console.log(tempArray);
   }, [rssList]);
 
   // console.log(Forums);
