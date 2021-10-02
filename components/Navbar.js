@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { BsFillCollectionFill } from "react-icons/bs";
 import { MdCollectionsBookmark } from "react-icons/md";
 import { HiViewGridAdd, HiNewspaper } from "react-icons/hi";
@@ -7,11 +8,19 @@ import { MdWork } from "react-icons/md";
 import { FaHandsHelping } from "react-icons/fa";
 
 const Navbar = () => {
+  const router = useRouter();
+
   return (
     <div>
       <div className="flex flex-col justify-between justify-items-center text-center text-white my-auto">
         {/* All Categories */}
-        <div className="hover:bg-hellosidebarblue-400 hover:shadow-lg p-2 my-2 rounded-md">
+        <div
+          className={`${
+            router.pathname == "/"
+              ? "active bg-hellosidebarblue-400 shadow-lg"
+              : ""
+          } hover:bg-hellosidebarblue-400 hover:shadow-lg p-2 my-2 rounded-md`}
+        >
           <Link href="/">
             <a>
               <div className="flex flex-row my-auto font-medium">
@@ -26,7 +35,13 @@ const Navbar = () => {
           </Link>
         </div>
         {/* React News */}
-        <div className="hover:bg-hellosidebarblue-400 hover:shadow-lg p-2 my-2 rounded-md">
+        <div
+          className={`${
+            router.pathname == "/reactNews"
+              ? "active bg-hellosidebarblue-400 shadow-lg"
+              : ""
+          } hover:bg-hellosidebarblue-400 hover:shadow-lg p-2 my-2 rounded-md`}
+        >
           <Link href="/reactNews">
             <a>
               <div className="flex flex-row my-auto font-medium">
@@ -41,7 +56,13 @@ const Navbar = () => {
           </Link>
         </div>
         {/* My Bookmark */}
-        <div className="hover:bg-hellosidebarblue-400 hover:shadow-lg p-2 my-2 rounded-md">
+        <div
+          className={`${
+            router.pathname == "/myBookmarks"
+              ? "active bg-hellosidebarblue-400 shadow-lg"
+              : ""
+          } hover:bg-hellosidebarblue-400 hover:shadow-lg p-2 my-2 rounded-md`}
+        >
           <Link href="/myBookmarks">
             <a>
               <div className="flex flex-row my-auto font-medium">
@@ -56,7 +77,13 @@ const Navbar = () => {
           </Link>
         </div>
         {/* Add Resource */}
-        <div className="hover:bg-hellosidebarblue-400 hover:shadow-lg p-2 my-2 rounded-md">
+        <div
+          className={`${
+            router.pathname == "/addResources"
+              ? "active bg-hellosidebarblue-400 shadow-lg"
+              : ""
+          } hover:bg-hellosidebarblue-400 hover:shadow-lg p-2 my-2 rounded-md`}
+        >
           <Link href="/">
             <a>
               <div className="flex flex-row my-auto font-medium">
@@ -71,7 +98,13 @@ const Navbar = () => {
           </Link>
         </div>
         {/* Jobs */}
-        <div className="hover:bg-hellosidebarblue-400 hover:shadow-lg p-2 my-2 rounded-md">
+        <div
+          className={`${
+            router.pathname == "/jobs"
+              ? "active bg-hellosidebarblue-400 shadow-lg"
+              : ""
+          } hover:bg-hellosidebarblue-400 hover:shadow-lg p-2 my-2 rounded-md`}
+        >
           <Link href="/">
             <a>
               <div className="flex flex-row my-auto font-medium">
@@ -87,7 +120,13 @@ const Navbar = () => {
           </Link>
         </div>
         {/* Sponsors */}
-        <div className="hover:bg-hellosidebarblue-400 hover:shadow-lg p-2 my-2 rounded-md">
+        <div
+          className={`${
+            router.pathname == "/sponsors"
+              ? "active bg-hellosidebarblue-400 shadow-lg"
+              : ""
+          } hover:bg-hellosidebarblue-400 hover:shadow-lg p-2 my-2 rounded-md`}
+        >
           <Link href="/">
             <a>
               <div className="flex flex-row my-auto font-medium">
