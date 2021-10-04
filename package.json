@@ -20,7 +20,6 @@
     "react-moment": "^1.1.1",
     "react-reading-time-estimator": "^1.0.0",
     "react-scroll": "^1.8.4",
-    "react-spring": "^9.2.4",
     "rss-parser": "^3.12.0"
   },
   "devDependencies": {

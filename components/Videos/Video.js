@@ -1,6 +1,9 @@
 import React from "react";
 import { BsBookmark, BsBookmarkFill } from "react-icons/bs";
 import { RiYoutubeFill } from "react-icons/ri";
+import toast, { Toaster } from "react-hot-toast";
+
+const notify = () => toast.success("Bookmark Created💪");
 
 // This is the Video Component
 const Video = ({
@@ -14,9 +17,10 @@ const Video = ({
   const [isBookmarked, setBookmarked] = React.useState(false);
   const handleBookmark = () => {
     setBookmarked(!isBookmarked);
+    notify();
   };
 
-  const dateToFormat = new Date(pubDate);
+  // const dateToFormat = new Date(pubDate);
 
   return (
     <div className="mx-2">
@@ -29,7 +33,7 @@ const Video = ({
         <div className="flex-grow m-auto text-gray-700 text-center mx-2">
           <div>
             <a href={`${link}`} target="__blank">
-              <h1 className="text-md md:text-md font-medium md:font-semibold hover:text-helloblue-600">
+              <h1 className="text-md md:text-sm font-medium md:font-semibold hover:text-helloblue-600">
                 {title}
               </h1>
             </a>
@@ -52,6 +56,7 @@ const Video = ({
             <span className="text-2xl mx-1">
               {isBookmarked ? <BsBookmarkFill /> : <BsBookmark />}
             </span>
+            <Toaster />
           </button>
         </div>
       </section>

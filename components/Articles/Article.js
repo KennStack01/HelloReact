@@ -3,9 +3,6 @@ import { BsBoxArrowUpRight, BsBookmark, BsBookmarkFill } from "react-icons/bs";
 import Moment from "react-moment";
 import { useReadingTime } from "react-reading-time-estimator";
 import { supabase } from "../../utils/supabaseClient";
-import toast, { Toaster } from "react-hot-toast";
-
-const notify = () => toast("Here is your toast.");
 
 // This is the Article Component
 const Article = ({
@@ -33,7 +30,6 @@ const Article = ({
 
     await supabase.from("articles").insert([bookmark]).single();
     await setBookmarked(true);
-    await notify();
   };
 
   const dateToFormat = new Date(pubDate);

@@ -34,7 +34,7 @@ const UserOptions = () => {
       >
         <Menu.Items className="absolute right-0 w-36 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="px-1 py-1 ">
-            {/* <Menu.Item>
+            <Menu.Item>
               {({ active }) => (
                 <button
                   className={`${
@@ -49,7 +49,7 @@ const UserOptions = () => {
                   Edit Profile
                 </button>
               )}
-            </Menu.Item> */}
+            </Menu.Item>
             <Menu.Item>
               {({ active }) => (
                 <button

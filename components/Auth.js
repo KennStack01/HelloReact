@@ -2,16 +2,12 @@ import { useState } from "react";
 import { supabase } from "../utils/supabaseClient";
 import { FcGoogle } from "react-icons/fc";
 import { FaTwitter, FaGithub } from "react-icons/fa";
-import toast, { Toaster } from "react-hot-toast";
-
-const notify = () => toast("Sucessfully accessed 😃");
 
 export default function Auth() {
   const [loading, setLoading] = useState(false);
 
   const handleLoading = () => {
     setLoading(!loading);
-    notify();
   };
 
   const handleLogin = async () => {
