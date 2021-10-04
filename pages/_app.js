@@ -3,6 +3,7 @@ import "tailwindcss/tailwind.css";
 import Head from "next/head";
 import Layout from "../components/layout";
 import "../styles/global.css";
+import { Toaster } from "react-hot-toast";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -16,6 +17,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
 
       <Component {...pageProps} />
+      <Toaster position="top-right" reverseOrder={false} />
     </Layout>
   );
 }
