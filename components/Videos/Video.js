@@ -21,6 +21,7 @@ const Video = ({
   content = "",
 }) => {
   const [isBookmarked, setBookmarked] = React.useState(false);
+
   const handleBookmark = () => {
     setBookmarked(!isBookmarked);
     if (!isBookmarked) {

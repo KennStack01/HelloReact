@@ -122,7 +122,7 @@ const ArticlesList = () => {
                 .sort((a, b) => b.pubDate - a.pubDate)
                 .map((article) => (
                   <Article
-                    key={article.title + Date.now()}
+                    key={article.title}
                     title={article.title}
                     pubDate={article.pubDate}
                     link={article.link}

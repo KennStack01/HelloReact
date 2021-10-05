@@ -46,7 +46,7 @@ const UserOptions = () => {
                   ) : (
                     <FaUserEdit className="w-5 h-5 mr-2" aria-hidden="true" />
                   )}
-                  Edit Profile
+                  Profile
                 </button>
               )}
             </Menu.Item>
