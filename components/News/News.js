@@ -59,7 +59,7 @@ const News = ({
         <div className="flex flex-row m-auto my-2">
           <a href={`${link}`} target="__blank" className="items-center">
             <div className="flex flex-row font-semibold bg-helloyellow-600 text-gray-900 p-2 rounded  hover:bg-helloyellow-500">
-              <h3 className=" my-auto ml-2 mr-1">Read it</h3>
+              <h3 className=" my-auto ml-2 mr-1">Discover</h3>
               <span className="text-xl ml-1 mr-2">
                 <BsBoxArrowUpRight />
               </span>
