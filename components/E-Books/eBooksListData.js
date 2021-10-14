@@ -38,5 +38,14 @@ let eBooksURLs = [
     author: "Dr. Axel Rauschmayer",
     isFree: true,
   },
+  {
+    title:
+      "50 Projects For React & The Static WebvaScript for impatient programmers",
+    link: "https://50reactprojects.com/",
+    pictureURL:
+      "https://50reactprojects.com/_next/static/images/50-react-projects-og-86af810896e9c9b98e15db5457f712bd.jpg",
+    author: "Colby Fayock",
+    isFree: true,
+  },
 ];
 export default eBooksURLs;

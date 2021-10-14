@@ -2,7 +2,7 @@ import React from "react";
 
 import ArticlesList from "../Articles/ArticlesList";
 import VideosList from "../Videos/VideosList";
-import ForumsList from "../Forums/forumsList";
+import ForumsList from "../Forums/ForumsList";
 import SnippetsList from "../Snippets/SnippetsList";
 
 const Tabs = ({ color }) => {

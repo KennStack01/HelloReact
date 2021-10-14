@@ -35,7 +35,7 @@ const EBook = ({ pictureURL, title, pubDate, link, author, isFree }) => {
               target="__blank"
               className="flex flex-row justify-center"
             >
-              <h1 className="text-md font-semibold font-sans hover:text-helloblue-600">
+              <h1 className="text-md md:text-sm font-semibold font-sans hover:text-helloblue-600">
                 {title}
               </h1>
             </a>
@@ -45,7 +45,7 @@ const EBook = ({ pictureURL, title, pubDate, link, author, isFree }) => {
             </p>
           </div>
         </div>
-        <div className="flex flex-row m-auto my-2">
+        <div className="flex flex-row m-auto my-1">
           <a href={`${link}`} target="__blank" className="items-center">
             <div className="flex flex-row font-semibold bg-helloblue-500 hover:bg-helloblue-400 text-white p-2 rounded  hover:drop-shadow-md">
               <h3 className=" my-auto ml-2 mr-1">Open it</h3>

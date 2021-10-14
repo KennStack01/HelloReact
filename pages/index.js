@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className="flex flex-col justify-center min-h-screen py-2 md:mx-4">
       <Head>
-        <title>Welcome - HelloReact</title>
+        <title>Welcome | HelloReact</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex flex-col w-full flex-1 md:px-20 text-center">

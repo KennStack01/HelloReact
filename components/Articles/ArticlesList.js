@@ -41,7 +41,10 @@ const ArticlesList = () => {
   };
 
   const fetchArticles = async (url, parser) => {
-    const feed = await parser.parseURL(`https://cors.bridged.cc/${url}`);
+    const feed = await parser.parseURL(
+      `https://cors-anywhere.herokuapp.com/${url}`
+    );
+    // const feed = await parser.parseURL(`https://cors.bridged.cc/${url}`);
     // const blogPosts = filterPosts(feed.items, 5)
     const blogPosts = feed.items.filter((item) => {
       for (let i = 0; i < keywords.length; i++) {
