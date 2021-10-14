@@ -7,7 +7,7 @@ import { RiArrowUpCircleFill } from "react-icons/ri";
 import { Link } from "react-scroll";
 import { HideScroll } from "react-hide-on-scroll";
 
-const ForumsList = () => {
+const MyForumsList = () => {
   const [forums, setForums] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
@@ -141,4 +141,4 @@ const ForumsList = () => {
   );
 };
 
-export default ForumsList;
+export default MyForumsList;
