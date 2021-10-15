@@ -40,7 +40,7 @@ const NewsList = () => {
     return orderedArray;
   };
 
-  const fetchnews = async (url, parser) => {
+  const fetchNews = async (url, parser) => {
     const feed = await parser.parseURL(
       `https://cors-anywhere.herokuapp.com/${url}`
     );
@@ -66,7 +66,7 @@ const NewsList = () => {
       // const filterPosts = (items, limit) => {
       //   ...
       // }
-      fetchnews(url, parser);
+      fetchNews(url, parser);
 
       tempArray = tempArray.sort((a, b) => {
         return new Date(b.pubDate) - new Date(a.pubDate);
