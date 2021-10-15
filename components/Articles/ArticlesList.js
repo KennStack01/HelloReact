@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Article from "./Article";
+
 import Parser from "rss-parser";
+
 import rssList from "./rssList";
 import keywords from "../keywords";
 import { RiArrowUpCircleFill } from "react-icons/ri";
@@ -44,8 +46,9 @@ const ArticlesList = () => {
     const feed = await parser.parseURL(
       `https://cors-anywhere.herokuapp.com/${url}`
     );
+
     // const feed = await parser.parseURL(`https://cors.bridged.cc/${url}`);
-    // const blogPosts = filterPosts(feed.items, 5)
+
     const blogPosts = feed.items.filter((item) => {
       for (let i = 0; i < keywords.length; i++) {
         return item.title.toLowerCase().includes(keywords[i]);
@@ -63,9 +66,7 @@ const ArticlesList = () => {
     rssList.forEach((url) => {
       tempURL = url;
       const parser = new Parser();
-      // const filterPosts = (items, limit) => {
-      //   ...
-      // }
+
       fetchArticles(url, parser);
 
       tempArray = tempArray.sort((a, b) => {
@@ -79,12 +80,6 @@ const ArticlesList = () => {
     setArticles(tempArray);
     // console.log(tempArray);
   }, [rssList]);
-
-  // console.log(articles);
-
-  // articles.forEach((article) => {
-  //   console.log(article.link);
-  // });
 
   return (
     <div>

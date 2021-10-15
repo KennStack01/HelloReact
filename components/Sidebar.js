@@ -126,12 +126,12 @@ const Sidebar = () => {
             </div>
           </div>
           {/* Settings Info */}
-          <div className="flex flex-row bottom-0 p-3 mx-2 bg-hellosidebarblue-600 hover:shadow-lg rounded-md">
-            <div className="text-2xl my-auto bg-hellosidebarblue-600 hover:shadow-lg px-2 py-1 rounded cursor-pointer ">
+          <div className="flex flex-row text-center bottom-0 p-3 mx-2 bg-hellosidebarblue-600 hover:shadow-lg rounded-md">
+            {/* <div className="text-2xl my-auto bg-hellosidebarblue-600 hover:shadow-lg px-2 py-1 rounded cursor-pointer ">
               <GoSettings />
-            </div>
-            <h3 className="my-auto"> Settings </h3>
-            <div className="bg-helloblue-800 hover:shadow-lg text-xl px-2 py-1 ml-5 rounded cursor-pointer">
+            </div> */}
+            <h3 className="my-auto ml-2"> HelloReact 👋 </h3>
+            <div className="bg-helloblue-800 hover:shadow-lg text-xl px-2 py-1 ml-2 rounded cursor-pointer">
               <IoIosArrowUp />
             </div>
           </div>

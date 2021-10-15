@@ -7,7 +7,7 @@ import { RiArrowUpCircleFill } from "react-icons/ri";
 import { Link } from "react-scroll";
 import { HideScroll } from "react-hide-on-scroll";
 
-const MyForumsList = () => {
+const ForumsList = () => {
   const [forums, setForums] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
@@ -30,7 +30,10 @@ const MyForumsList = () => {
   }
 
   const fetchForums = async (url, parser) => {
-    const feed = await parser.parseURL(`https://cors.bridged.cc/${url}`);
+    const feed = await parser.parseURL(
+      `https://cors-anywhere.herokuapp.com/${url}`
+    );
+    // const feed = await parser.parseURL(`https://cors.bridged.cc/${url}`);
     // const blogPosts = filterPosts(feed.items, 5)
     const blogPosts = feed.items.filter((item) => {
       for (let i = 0; i < keywords.length; i++) {
@@ -141,4 +144,4 @@ const MyForumsList = () => {
   );
 };
 
-export default MyForumsList;
+export default ForumsList;
