@@ -41,7 +41,7 @@ const Sidebar = () => {
     <>
       {isSideBarHidden && (
         <div
-          className={`flex flex-col justify-between text-white bg-hellosidebarblue-500 w-3/5 md:w-1/6 h-screen max-h-screen md:sticky fixed z-40 md:z-0 left-0 bottom-0 top-0`}
+          className={`flex flex-col justify-between text-white bg-hellosidebarblue-500 w-3/5 md:w-1/6 h-screen max-h-screen md:sticky fixed z-40 md:z-0 left-0 bottom-0 top-0 transition-all duration-300 ease-linear`}
         >
           {/* user info, this shows based on User Auth */}
           <div>

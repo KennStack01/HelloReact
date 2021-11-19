@@ -43,9 +43,7 @@ const ArticlesList = () => {
   };
 
   const fetchArticles = async (url, parser) => {
-    const feed = await parser.parseURL(
-      `https://cors-anywhere.herokuapp.com/${url}`
-    );
+    const feed = await parser.parseURL(`https://iamkenn.herokuapp.com/${url}`);
 
     // const feed = await parser.parseURL(`https://cors.bridged.cc/${url}`);
 
