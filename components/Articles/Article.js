@@ -2,7 +2,6 @@ import React from "react";
 import { BsBoxArrowUpRight, BsBookmark, BsBookmarkFill } from "react-icons/bs";
 import Moment from "react-moment";
 import { useReadingTime } from "react-reading-time-estimator";
-import { supabase } from "../../utils/supabaseClient";
 import toast from "react-hot-toast";
 
 const notify = () =>
@@ -31,7 +30,6 @@ const Article = ({ picturelURL, title, pubDate, link, content = "" }) => {
       pubDate,
     };
 
-    await supabase.from("articles").insert([bookmark]).single();
     await setBookmarked(true);
     if (!isBookmarked) {
       await notify();
