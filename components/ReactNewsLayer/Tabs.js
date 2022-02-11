@@ -1,6 +1,6 @@
 import React from "react";
 
-import ForumsList from "../Forums/forumsList";
+import ForumsList from "../Forums/ForumsList";
 import ConferencesList from "../Conferences/ConferencesList";
 import NewsList from "../News/NewsList";
 
