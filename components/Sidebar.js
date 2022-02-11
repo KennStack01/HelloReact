@@ -2,12 +2,9 @@ import React, { useState, useEffect, Fragment } from "react";
 import Link from "next/link";
 import Navbar from "./Navbar";
 import { GoSettings } from "react-icons/go";
-import {
-  IoIosArrowUp,
-  IoIosArrowBack,
-  IoIosArrowForward,
-} from "react-icons/io";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { FiLogIn } from "react-icons/fi";
+import { VscFeedback } from "react-icons/vsc";
 // import { useSpring, animated } from "react-spring";
 
 import { Dialog, Transition } from "@headlessui/react";
@@ -120,9 +117,9 @@ const Sidebar = () => {
             {/* <div className="text-2xl my-auto bg-hellosidebarblue-600 hover:shadow-lg px-2 py-1 rounded cursor-pointer ">
               <GoSettings />
             </div> */}
-            <h3 className="my-auto ml-2"> HelloReact 👋 </h3>
+            <h3 className="my-auto text-xs ml-2"> Give Feedback 👋 </h3>
             <div className="bg-helloblue-800 hover:shadow-lg text-xl px-2 py-1 ml-2 rounded cursor-pointer">
-              <IoIosArrowUp />
+              <VscFeedback />
             </div>
           </div>
         </div>

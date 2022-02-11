@@ -8,7 +8,7 @@ const notify = () =>
   toast.success(
     <div className="text-lg">
       {" "}
-      <p>Bookmark Created</p>{" "}
+      <p>Bookmark tested 😃</p>{" "}
     </div>
   );
 
@@ -18,23 +18,28 @@ const Article = ({ picturelURL, title, pubDate, link, content = "" }) => {
   const [bookmark, setBookmark] = React.useState([]);
 
   const handleBookmark = () => {
-    console.log({ title, picturelURL, link, pubDate });
+    // console.log({ title, picturelURL, link, pubDate });
     setBookmarked(!isBookmarked);
-  };
 
-  const createBookmark = async () => {
-    const bookmark = {
-      title,
-      picturelURL,
-      link,
-      pubDate,
-    };
-
-    await setBookmarked(true);
     if (!isBookmarked) {
-      await notify();
+      notify();
     }
   };
+
+  // const createBookmark = async () => {
+  //   // const bookmark = {
+  //   //   title,
+  //   //   picturelURL,
+  //   //   link,
+  //   //   pubDate,
+  //   // };
+
+  //   setBookmarked(true);
+
+  //   if (!isBookmarked) {
+  //     notify();
+  //   }
+  // };
 
   const dateToFormat = new Date(pubDate);
   const {
@@ -81,8 +86,8 @@ const Article = ({ picturelURL, title, pubDate, link, content = "" }) => {
             </div>
           </a>
           <button
-            // onClick={handleBookmark}
-            onClick={createBookmark}
+            onClick={handleBookmark}
+            // onClick={createBookmark}
             className="flex flex-row font-semibold rounded-lg bg-white text-helloblue-500  hover:shadow-sm shadow-md p-2 ml-4"
           >
             {/* <h3 className=" my-auto ml-2 mr-1">Read it</h3> */}

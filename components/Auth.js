@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { FaTwitter, FaGithub } from "react-icons/fa";
+import { IoLogoTwitter } from "react-icons/io";
 
 export default function Auth() {
   const [loading, setLoading] = useState(false);
@@ -22,7 +23,10 @@ export default function Auth() {
               <div className="flex flex-row text-white">
                 <FaGithub className="my-auto text-3xl" />
                 <h3 className=" text-md font-medium my-auto mx-2">
-                  {loading ? "In process..." : "Login with Github"}
+                  Login with Github{" "}
+                  <span className="text-xs italic text-black bg-gray-300 px-1 rounded">
+                    soon
+                  </span>
                 </h3>
               </div>
             </button>
@@ -55,6 +59,19 @@ export default function Auth() {
                 </h3>
               </div>
             </button>
+
+            <a
+              href="https://twitter.com/KennKibadi"
+              target="__blank"
+              className="flex flex-row my-6 mx-auto text-center text-lg font-medium hover:underline text-gray-600"
+            >
+              <div className="text-xl md:text-2xl">
+                <IoLogoTwitter />
+              </div>
+              <h1 className="text-xs my-auto font-medium lg:text-sm">
+                @KennKibadi
+              </h1>
+            </a>
           </div>
         </div>
       </div>
