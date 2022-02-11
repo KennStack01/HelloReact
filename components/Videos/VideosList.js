@@ -95,7 +95,7 @@ const VideosList = () => {
         {isLoading ? (
           <div>
             <h1 className="text-xl text-gray-700 font-semibold text-center mx-auto place-self-center">
-              Loading...
+              Loading... (Under Development)
             </h1>
           </div>
         ) : (

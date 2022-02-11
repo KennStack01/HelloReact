@@ -3,14 +3,27 @@ import { BsBoxArrowUpRight, BsBookmark, BsBookmarkFill } from "react-icons/bs";
 import { SiReddit } from "react-icons/si";
 import Moment from "react-moment";
 import { BiDoorOpen } from "react-icons/bi";
+import toast from "react-hot-toast";
 
-// This is the Forum Component
+const notify = () =>
+  toast.success(
+    <div className="text-lg">
+      {" "}
+      <p>Bookmark tested 😃</p>{" "}
+    </div>
+  );
+
 const Forum = ({ title, pubDate, link }) => {
   const [isBookmarked, setBookmarked] = React.useState(false);
-  const handleBookmark = () => {
-    setBookmarked(!isBookmarked);
-  };
 
+  const handleBookmark = () => {
+    // console.log({ title, picturelURL, link, pubDate });
+    setBookmarked(!isBookmarked);
+
+    if (!isBookmarked) {
+      notify();
+    }
+  };
   const dateToFormat = new Date(pubDate);
 
   return (

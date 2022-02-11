@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import News from "./News";
 import Parser from "rss-parser";
 import rssList from "./rssList";
@@ -17,7 +18,6 @@ const NewsList = () => {
 
   function shuffleArray(array) {
     for (var i = array.length - 1; i > 0; i--) {
-      // Generate random number
       var j = Math.floor(Math.random() * (i + 1));
 
       var temp = array[i];
@@ -28,57 +28,103 @@ const NewsList = () => {
     return array;
   }
 
-  const removeDuplicateObject = (fn) => {
-    const sortedArray = new Set();
+  async function getFeed(rssFeed) {
+    try {
+      const rssToJsonApi = "https://api.rss2json.com/v1/api.json";
+      const data = {
+        params: {
+          rss_url: rssFeed,
+          api_key: process.env.API_KEY,
+          // order_by: "pubDate",
+          // order_dir: "desc",
+          // count: 5,
+        },
+      };
+      const feed = await axios.get(rssToJsonApi, data);
 
-    const orderedArray = fn.filter((el) => {
-      const duplicate = sortedArray.has(el.id);
-      sortedArray.add(el.id);
-      return !duplicate;
-    });
+      const blogPosts = feed.data.items.filter((item) => {
+        for (let i = 0; i < keywords.length; i++) {
+          return item.title.toLowerCase().includes(keywords[i]);
+        }
+      });
 
-    return orderedArray;
-  };
+      tempArray.push(...blogPosts);
+      tempArray = shuffleArray(tempArray);
+      setLoading(false);
 
-  const fetchNews = async (url, parser) => {
-    const feed = await parser.parseURL(
-      `https://cors-anywhere.herokuapp.com/${url}`
-    );
-    // const feed = await parser.parseURL(`https://cors.bridged.cc/${url}`);
-    // const blogPosts = filterPosts(feed.items, 5)
-    const blogPosts = feed.items.filter((item) => {
-      for (let i = 0; i < keywords.length; i++) {
-        return item.title.toLowerCase().includes(keywords[i]);
-      }
-    });
+      // console.log(feed.data.items);
+      // return feed;
+      // return await axios.get(rssToJsonApi, data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
-    tempArray.push(...blogPosts);
-    setLoading(false);
-
-    // setNews([...news, ...blogPosts]);
-  };
+  async function getFinalNews() {
+    setNews(tempArray);
+  }
 
   useEffect(() => {
-    rssList = rssList.sort(() => Math.random() - 0.5);
     rssList.forEach((url) => {
-      tempURL = url;
-      const parser = new Parser();
-      // const filterPosts = (items, limit) => {
-      //   ...
-      // }
-      fetchNews(url, parser);
+      const RssFeed = `${url}`;
 
-      tempArray = tempArray.sort((a, b) => {
-        return new Date(b.pubDate) - new Date(a.pubDate);
-      });
-      // shuffle array
-      tempArray = shuffleArray(tempArray);
+      getFeed(RssFeed);
     });
 
-    tempArray = removeDuplicateObject(tempArray);
-    setNews(tempArray);
-    // console.log(tempArray);
-  }, [rssList]);
+    getFinalNews();
+  }, []);
+
+  // const removeDuplicateObject = (fn) => {
+  //   const sortedArray = new Set();
+
+  //   const orderedArray = fn.filter((el) => {
+  //     const duplicate = sortedArray.has(el.id);
+  //     sortedArray.add(el.id);
+  //     return !duplicate;
+  //   });
+
+  //   return orderedArray;
+  // };
+
+  // const fetchNews = async (url, parser) => {
+  //   const feed = await parser.parseURL(
+  //     `https://cors-anywhere.herokuapp.com/${url}`
+  //   );
+  //   // const feed = await parser.parseURL(`https://cors.bridged.cc/${url}`);
+  //   // const blogPosts = filterPosts(feed.items, 5)
+  //   const blogPosts = feed.items.filter((item) => {
+  //     for (let i = 0; i < keywords.length; i++) {
+  //       return item.title.toLowerCase().includes(keywords[i]);
+  //     }
+  //   });
+
+  //   tempArray.push(...blogPosts);
+  //   setLoading(false);
+
+  //   // setNews([...news, ...blogPosts]);
+  // };
+
+  // useEffect(() => {
+  //   rssList = rssList.sort(() => Math.random() - 0.5);
+  //   rssList.forEach((url) => {
+  //     tempURL = url;
+  //     const parser = new Parser();
+  //     // const filterPosts = (items, limit) => {
+  //     //   ...
+  //     // }
+  //     fetchNews(url, parser);
+
+  //     tempArray = tempArray.sort((a, b) => {
+  //       return new Date(b.pubDate) - new Date(a.pubDate);
+  //     });
+  //     // shuffle array
+  //     tempArray = shuffleArray(tempArray);
+  //   });
+
+  //   tempArray = removeDuplicateObject(tempArray);
+  //   setNews(tempArray);
+  //   // console.log(tempArray);
+  // }, [rssList]);
 
   // console.log(news);
 
@@ -92,7 +138,7 @@ const NewsList = () => {
         {loading ? (
           <div>
             <h1 className="text-xl text-gray-700 font-semibold text-center mx-auto place-self-center">
-              Loading...
+              Loading... (Under Development)
             </h1>
           </div>
         ) : (
@@ -130,6 +176,10 @@ const NewsList = () => {
                     pubDate={news.pubDate}
                     link={news.link}
                     content={news.content}
+                    picturelURL={
+                      article.thumbnail ||
+                      "https://tutsnode.com/wp-content/uploads/2020/12/The-Creative-React-and-Redux-Course.jpg"
+                    }
                   />
                 ))}
             </div>
