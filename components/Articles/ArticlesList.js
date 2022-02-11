@@ -12,20 +12,7 @@ const ArticlesList = () => {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
 
-  let tempURL;
   let tempArray = [];
-
-  // function shuffleArray(array) {
-  //   for (var i = array.length - 1; i > 0; i--) {
-  //     var j = Math.floor(Math.random() * (i + 1));
-
-  //     var temp = array[i];
-  //     array[i] = array[j];
-  //     array[j] = temp;
-  //   }
-
-  //   return array;
-  // }
 
   function shuffleArray(array) {
     for (var i = array.length - 1; i > 0; i--) {
@@ -71,79 +58,15 @@ const ArticlesList = () => {
     }
   }
 
-  //   const removeDuplicateObject = (fn) => {
-  //     const sortedArray = new Set();
-
-  //     const orderedArray = fn.filter((el) => {
-  //       const duplicate = sortedArray.has(el.id);
-  //       sortedArray.add(el.id);
-  //       return !duplicate;
-  //     });
-
-  //     return orderedArray;
-  //   };
-
-  //   const fetchArticles = async (url, parser) => {
-  //     const feed = await parser.parseURL(
-  //       `https://api.rss2json.com/v1/api.json?rss_url=${url}`
-  //     );
-
-  //     const blogPosts = feed.items.filter((item) => {
-  //       for (let i = 0; i < keywords.length; i++) {
-  //         return item.title.toLowerCase().includes(keywords[i]);
-  //       }
-  //     });
-
-  //     tempArray.push(...blogPosts);
-  //     setLoading(false);
-
-  //     // setArticles([...articles, ...blogPosts]);
-  //   };
-
-  //   useEffect(() => {
-  //     rssList = rssList.sort(() => Math.random() - 0.5);
-  //     rssList.forEach((url) => {
-  //       tempURL = url;
-  //       const parser = new Parser();
-
-  //       fetchArticles(url, parser);
-
-  //       tempArray = tempArray.sort((a, b) => {
-  //         return new Date(b.pubDate) - new Date(a.pubDate);
-  //       });
-  //       // shuffle array
-  //       tempArray = shuffleArray(tempArray);
-  //     });
-
-  //     tempArray = removeDuplicateObject(tempArray);
-  //     setArticles(tempArray);
-  //     // console.log(tempArray);
-  //   }, [rssList]);
-
   async function getFinalArticles() {
     setArticles(tempArray);
   }
 
-  // const MAX_ARTICLES = 10;
   useEffect(() => {
     rssList.forEach((url) => {
       const RssFeed = `${url}`;
 
       getFeed(RssFeed);
-
-      // const loadArticles = async () => {
-      //   fetch(RssFeed, { headers: { Accept: "application/json" } })
-      //     .then((res) => res.json())
-      //     .then((data) => data.items.filter((item) => item.title.length > 0))
-      //     .then((newArticles) => newArticles.slice(0, MAX_ARTICLES))
-      //     .then((articles) => {
-      //       console.log(articles);
-      //       setArticles(articles);
-      //       setLoading(false);
-      //     })
-      //     .catch((error) => console.log(error));
-      // };
-      // loadArticles();
     });
 
     getFinalArticles();
@@ -215,7 +138,6 @@ const ArticlesList = () => {
               <div></div>
               <div></div>
               <div className="z-50 flex flex-row-reverse bg-white text-helloblue-700 font-semibold w-14 rounded-full cursor-pointer">
-                {/* <p className="text-xl">Scroll Up</p> */}
                 <RiArrowUpCircleFill className="text-6xl mx-auto justify-items-center" />
               </div>
             </Link>
