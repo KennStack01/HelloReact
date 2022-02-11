@@ -1,22 +1,43 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Article from "./Article";
-
-import Parser from "rss-parser";
-
 import rssList from "./rssList";
 import keywords from "../keywords";
 import { RiArrowUpCircleFill } from "react-icons/ri";
 import { Link } from "react-scroll";
 import { HideScroll } from "react-hide-on-scroll";
 
-const ArticlesList = ({}) => {
+const ArticlesList = () => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
 
   let tempURL;
   let tempArray = [];
+
+  // function shuffleArray(array) {
+  //   for (var i = array.length - 1; i > 0; i--) {
+  //     var j = Math.floor(Math.random() * (i + 1));
+
+  //     var temp = array[i];
+  //     array[i] = array[j];
+  //     array[j] = temp;
+  //   }
+
+  //   return array;
+  // }
+
+  function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+
+      var temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+
+    return array;
+  }
 
   async function getFeed(rssFeed) {
     try {
@@ -39,9 +60,8 @@ const ArticlesList = ({}) => {
       });
 
       tempArray.push(...blogPosts);
+      tempArray = shuffleArray(tempArray);
       setLoading(false);
-
-      console.log(tempArray);
 
       // console.log(feed.data.items);
       // return feed;
@@ -50,18 +70,6 @@ const ArticlesList = ({}) => {
       console.error(error);
     }
   }
-
-  //   function shuffleArray(array) {
-  //     for (var i = array.length - 1; i > 0; i--) {
-  //       var j = Math.floor(Math.random() * (i + 1));
-
-  //       var temp = array[i];
-  //       array[i] = array[j];
-  //       array[j] = temp;
-  //     }
-
-  //     return array;
-  //   }
 
   //   const removeDuplicateObject = (fn) => {
   //     const sortedArray = new Set();
@@ -116,7 +124,7 @@ const ArticlesList = ({}) => {
     setArticles(tempArray);
   }
 
-  const MAX_ARTICLES = 10;
+  // const MAX_ARTICLES = 10;
   useEffect(() => {
     rssList.forEach((url) => {
       const RssFeed = `${url}`;
@@ -139,7 +147,7 @@ const ArticlesList = ({}) => {
     });
 
     getFinalArticles();
-  }, [MAX_ARTICLES]);
+  }, []);
 
   return (
     <div>
@@ -193,6 +201,39 @@ const ArticlesList = ({}) => {
                 ))}
             </div>
           </div>
+        )}
+
+        {process.browser ? (
+          <HideScroll variant="down">
+            <Link
+              to="Banner"
+              // to="MenuTab"
+              smooth={true}
+              duration={1000}
+              className="sticky bottom-4 flex flex-row justify-between"
+            >
+              <div></div>
+              <div></div>
+              <div className="z-50 flex flex-row-reverse bg-white text-helloblue-700 font-semibold w-14 rounded-full cursor-pointer">
+                {/* <p className="text-xl">Scroll Up</p> */}
+                <RiArrowUpCircleFill className="text-6xl mx-auto justify-items-center" />
+              </div>
+            </Link>
+          </HideScroll>
+        ) : (
+          // <div>
+          //   {/* <HideScroll variant="down">
+          //     <Link
+          //       to="Banner"
+          //       smooth={true}
+          //       duration={1000}
+          //       className=" z-30 bg-white text-gray-900 font-semibold hidden md:block sticky bottom-2 w-14 rounded-full cursor-pointer"
+          //     >
+          //       <RiArrowUpCircleFill className="text-6xl mx-auto justify-items-center" />
+          //     </Link>
+          //   </HideScroll> */}
+          // </div>
+          ""
         )}
       </div>
     </div>
