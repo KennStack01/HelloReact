@@ -8,11 +8,9 @@ import {
   IoIosArrowForward,
 } from "react-icons/io";
 import { FiLogIn } from "react-icons/fi";
-import UserInfo from "./Account";
 // import { useSpring, animated } from "react-spring";
 
 import { Dialog, Transition } from "@headlessui/react";
-import { supabase } from "../utils/supabaseClient";
 
 import Login from "./Auth";
 
@@ -28,14 +26,6 @@ const Sidebar = () => {
   function openModal() {
     setIsOpen(true);
   }
-
-  useEffect(() => {
-    setSession(supabase.auth.session());
-
-    supabase.auth.onAuthStateChange((_event, session) => {
-      setSession(session);
-    });
-  }, []);
 
   return (
     <>
@@ -110,7 +100,7 @@ const Sidebar = () => {
                 </div>
               </div>
             ) : (
-              <UserInfo />
+              <h1>Hello, Kenn!</h1>
             )}
           </div>
           <div>

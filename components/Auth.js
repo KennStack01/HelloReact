@@ -1,28 +1,9 @@
 import { useState } from "react";
-import { supabase } from "../utils/supabaseClient";
 import { FcGoogle } from "react-icons/fc";
 import { FaTwitter, FaGithub } from "react-icons/fa";
 
 export default function Auth() {
   const [loading, setLoading] = useState(false);
-
-  const handleLoading = () => {
-    setLoading(!loading);
-  };
-
-  const handleLogin = async () => {
-    try {
-      setLoading(true);
-      const { user, session, error } = await supabase.auth.signIn({
-        provider: "github",
-      });
-      notify();
-    } catch (error) {
-      console.log(error.message);
-    } finally {
-      setLoading(false);
-    }
-  };
 
   return (
     <div className="md:flex flex-row my-4 md:my-6 mx-auto p-4">
@@ -34,7 +15,7 @@ export default function Auth() {
           <div className="flex flex-col">
             {/* Github */}
             <button
-              onClick={handleLogin}
+              // onClick={handleLogin}
               className="bg-white outline-none shadow-sm hover:shadow-lg mx-auto px-10 font-semibold py-2 my-3 rounded-lg"
               style={{ background: "#211F1F" }}
             >
