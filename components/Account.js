@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import profilePic from "../public/userPhoto.jpg";
 import { supabase } from "../utils/supabaseClient";
-import UserOptions from "./UserOptions";
+import UserOptions from "./userOptions";
 
 const UserInfo = () => {
   const [user, setUser] = useState(null);
