@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import Article from "./Article";
 
 import Parser from "rss-parser";
@@ -9,7 +10,7 @@ import { RiArrowUpCircleFill } from "react-icons/ri";
 import { Link } from "react-scroll";
 import { HideScroll } from "react-hide-on-scroll";
 
-const ArticlesList = () => {
+const ArticlesList = ({}) => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
@@ -17,67 +18,128 @@ const ArticlesList = () => {
   let tempURL;
   let tempArray = [];
 
-  function shuffleArray(array) {
-    for (var i = array.length - 1; i > 0; i--) {
-      // Generate random number
-      var j = Math.floor(Math.random() * (i + 1));
+  async function getFeed(rssFeed) {
+    try {
+      const rssToJsonApi = "https://api.rss2json.com/v1/api.json";
+      const data = {
+        params: {
+          rss_url: rssFeed,
+          api_key: process.env.API_KEY,
+          // order_by: "pubDate",
+          // order_dir: "desc",
+          // count: 5,
+        },
+      };
+      const feed = await axios.get(rssToJsonApi, data);
 
-      var temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
+      const blogPosts = feed.data.items.filter((item) => {
+        for (let i = 0; i < keywords.length; i++) {
+          return item.title.toLowerCase().includes(keywords[i]);
+        }
+      });
+
+      tempArray.push(...blogPosts);
+      setLoading(false);
+
+      console.log(tempArray);
+
+      // console.log(feed.data.items);
+      // return feed;
+      // return await axios.get(rssToJsonApi, data);
+    } catch (error) {
+      console.error(error);
     }
-
-    return array;
   }
 
-  const removeDuplicateObject = (fn) => {
-    const sortedArray = new Set();
+  //   function shuffleArray(array) {
+  //     for (var i = array.length - 1; i > 0; i--) {
+  //       var j = Math.floor(Math.random() * (i + 1));
 
-    const orderedArray = fn.filter((el) => {
-      const duplicate = sortedArray.has(el.id);
-      sortedArray.add(el.id);
-      return !duplicate;
-    });
+  //       var temp = array[i];
+  //       array[i] = array[j];
+  //       array[j] = temp;
+  //     }
 
-    return orderedArray;
-  };
+  //     return array;
+  //   }
 
-  const fetchArticles = async (url, parser) => {
-    const feed = await parser.parseURL(`https://iamkenn.herokuapp.com/${url}`);
+  //   const removeDuplicateObject = (fn) => {
+  //     const sortedArray = new Set();
 
-    // const feed = await parser.parseURL(`https://cors.bridged.cc/${url}`);
+  //     const orderedArray = fn.filter((el) => {
+  //       const duplicate = sortedArray.has(el.id);
+  //       sortedArray.add(el.id);
+  //       return !duplicate;
+  //     });
 
-    const blogPosts = feed.items.filter((item) => {
-      for (let i = 0; i < keywords.length; i++) {
-        return item.title.toLowerCase().includes(keywords[i]);
-      }
-    });
+  //     return orderedArray;
+  //   };
 
-    tempArray.push(...blogPosts);
-    setLoading(false);
+  //   const fetchArticles = async (url, parser) => {
+  //     const feed = await parser.parseURL(
+  //       `https://api.rss2json.com/v1/api.json?rss_url=${url}`
+  //     );
 
-    // setArticles([...articles, ...blogPosts]);
-  };
+  //     const blogPosts = feed.items.filter((item) => {
+  //       for (let i = 0; i < keywords.length; i++) {
+  //         return item.title.toLowerCase().includes(keywords[i]);
+  //       }
+  //     });
 
-  useEffect(() => {
-    rssList = rssList.sort(() => Math.random() - 0.5);
-    rssList.forEach((url) => {
-      tempURL = url;
-      const parser = new Parser();
+  //     tempArray.push(...blogPosts);
+  //     setLoading(false);
 
-      fetchArticles(url, parser);
+  //     // setArticles([...articles, ...blogPosts]);
+  //   };
 
-      tempArray = tempArray.sort((a, b) => {
-        return new Date(b.pubDate) - new Date(a.pubDate);
-      });
-      // shuffle array
-      tempArray = shuffleArray(tempArray);
-    });
+  //   useEffect(() => {
+  //     rssList = rssList.sort(() => Math.random() - 0.5);
+  //     rssList.forEach((url) => {
+  //       tempURL = url;
+  //       const parser = new Parser();
 
-    tempArray = removeDuplicateObject(tempArray);
+  //       fetchArticles(url, parser);
+
+  //       tempArray = tempArray.sort((a, b) => {
+  //         return new Date(b.pubDate) - new Date(a.pubDate);
+  //       });
+  //       // shuffle array
+  //       tempArray = shuffleArray(tempArray);
+  //     });
+
+  //     tempArray = removeDuplicateObject(tempArray);
+  //     setArticles(tempArray);
+  //     // console.log(tempArray);
+  //   }, [rssList]);
+
+  async function getFinalArticles() {
     setArticles(tempArray);
-    // console.log(tempArray);
-  }, [rssList]);
+  }
+
+  const MAX_ARTICLES = 10;
+  useEffect(() => {
+    rssList.forEach((url) => {
+      const RssFeed = `${url}`;
+
+      getFeed(RssFeed);
+
+      // const loadArticles = async () => {
+      //   fetch(RssFeed, { headers: { Accept: "application/json" } })
+      //     .then((res) => res.json())
+      //     .then((data) => data.items.filter((item) => item.title.length > 0))
+      //     .then((newArticles) => newArticles.slice(0, MAX_ARTICLES))
+      //     .then((articles) => {
+      //       console.log(articles);
+      //       setArticles(articles);
+      //       setLoading(false);
+      //     })
+      //     .catch((error) => console.log(error));
+      // };
+      // loadArticles();
+    });
+
+    getFinalArticles();
+  }, [MAX_ARTICLES]);
 
   return (
     <div>
@@ -101,7 +163,7 @@ const ArticlesList = () => {
             </div>
             <div className="md:grid grid-cols-3 mx-auto">
               {articles
-                .filter((article) => {
+                ?.filter((article) => {
                   if (searchTerm === "") {
                     return article;
                   } else if (
@@ -123,42 +185,14 @@ const ArticlesList = () => {
                     pubDate={article.pubDate}
                     link={article.link}
                     content={article.content}
+                    picturelURL={
+                      article.thumbnail ||
+                      "https://tutsnode.com/wp-content/uploads/2020/12/The-Creative-React-and-Redux-Course.jpg"
+                    }
                   />
                 ))}
             </div>
           </div>
-        )}
-        {process.browser ? (
-          <HideScroll variant="down">
-            <Link
-              to="Banner"
-              // to="MenuTab"
-              smooth={true}
-              duration={1000}
-              className="sticky bottom-4 flex flex-row justify-between"
-            >
-              <div></div>
-              <div></div>
-              <div className="z-50 flex flex-row-reverse bg-white text-helloblue-700 font-semibold w-14 rounded-full cursor-pointer">
-                {/* <p className="text-xl">Scroll Up</p> */}
-                <RiArrowUpCircleFill className="text-6xl mx-auto justify-items-center" />
-              </div>
-            </Link>
-          </HideScroll>
-        ) : (
-          // <div>
-          //   {/* <HideScroll variant="down">
-          //     <Link
-          //       to="Banner"
-          //       smooth={true}
-          //       duration={1000}
-          //       className=" z-30 bg-white text-gray-900 font-semibold hidden md:block sticky bottom-2 w-14 rounded-full cursor-pointer"
-          //     >
-          //       <RiArrowUpCircleFill className="text-6xl mx-auto justify-items-center" />
-          //     </Link>
-          //   </HideScroll> */}
-          // </div>
-          ""
         )}
       </div>
     </div>

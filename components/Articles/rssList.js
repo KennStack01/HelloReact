@@ -9,8 +9,8 @@ let rssURLs = [
   "https://www.emgoto.com/rss.xml",
   "https://samuelkraft.com/feed.xml",
   "https://blog.bhanuteja.dev/rss.xml",
-  "https://amanhimself.dev/rss.xml",
-  "https://blog.rstankov.com/rss/",
+  // "https://amanhimself.dev/rss.xml", // not working
+  "https://blog.rstankov.com/rss",
   "https://upmostly.com/feed",
   "https://feed.reactresources.com/",
   "https://alexsidorenko.com/rss.xml",

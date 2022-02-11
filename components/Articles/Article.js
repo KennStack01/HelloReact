@@ -14,13 +14,7 @@ const notify = () =>
   );
 
 // This is the Article Component
-const Article = ({
-  picturelURL = "https://tutsnode.com/wp-content/uploads/2020/12/The-Creative-React-and-Redux-Course.jpg",
-  title,
-  pubDate,
-  link,
-  content = "",
-}) => {
+const Article = ({ picturelURL, title, pubDate, link, content = "" }) => {
   const [isBookmarked, setBookmarked] = React.useState(false);
   const [bookmark, setBookmark] = React.useState([]);
 
