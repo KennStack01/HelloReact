@@ -177,7 +177,7 @@ const NewsList = () => {
                     link={news.link}
                     content={news.content}
                     picturelURL={
-                      article.thumbnail ||
+                      news.thumbnail ||
                       "https://tutsnode.com/wp-content/uploads/2020/12/The-Creative-React-and-Redux-Course.jpg"
                     }
                   />
