@@ -44,14 +44,14 @@ const Forum = ({ title, pubDate, link }) => {
         <a
           href={`${link}`}
           target="__blank"
-          className="flex flex-row mx-auto text-xs text-helloblue-700 font-bold bg-helloyellow-500 hover:bg-helloyellow-400 rounded-xl p-2"
+          className="flex flex-row mx-auto text-sm text-helloblue-700 font-bold bg-helloyellow-500 hover:bg-helloyellow-400 rounded-xl p-2"
         >
           <p className="my-auto">Open</p>
-          <div className="text-md my-auto">
+          <div className="text-lg my-auto">
             <BiDoorOpen />
           </div>
         </a>
-        <button
+        {/* <button
           onClick={handleBookmark}
           className="flex flex-row justify-end font-semibold rounded-lg bg-white text-green-600 hover:shadow-sm shadow-md p-2 ml-4 mx-auto"
         >
@@ -61,7 +61,7 @@ const Forum = ({ title, pubDate, link }) => {
           <span className="text-xl mx-1">
             {isBookmarked ? <BsBookmarkFill /> : <BsBookmark />}
           </span>
-        </button>
+        </button> */}
       </div>
     </div>
     // <div className="mx-3 md:mx-5">

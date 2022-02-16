@@ -30,8 +30,12 @@ const ForumsList = () => {
   }
 
   const fetchForums = async (url, parser) => {
-    const feed = await parser.parseURL(`https://iamkenn.herokuapp.com/${url}`);
+    // const feed = await parser.parseURL(
+    //   `https://cors-anywhere.herokuapp.com/${url}`
+    // );
+    // const feed = await parser.parseURL(`https://iamkenn.herokuapp.com/${url}`);
     // const feed = await parser.parseURL(`https://cors.bridged.cc/${url}`);
+    const feed = await parser.parseURL(`https://cors.eu.org/${url}`);
     // const blogPosts = filterPosts(feed.items, 5)
     const blogPosts = feed.items.filter((item) => {
       for (let i = 0; i < keywords.length; i++) {

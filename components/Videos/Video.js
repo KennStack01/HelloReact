@@ -57,15 +57,14 @@ const Video = ({
               </span>
             </div>
           </a>
-          <button
+          {/* <button
             onClick={handleBookmark}
             className="flex flex-row font-semibold rounded-lg bg-white text-helloblue-500  hover:shadow-sm shadow-md p-2 ml-4"
           >
-            {/* <h3 className=" my-auto ml-2 mr-1">Read it</h3> */}
             <span className="text-2xl mx-1">
               {isBookmarked ? <BsBookmarkFill /> : <BsBookmark />}
             </span>
-          </button>
+          </button> */}
         </div>
       </section>
     </div>

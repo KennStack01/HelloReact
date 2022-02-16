@@ -42,7 +42,7 @@ const Navbar = () => {
               : ""
           } hover:bg-hellosidebarblue-400 hover:shadow-lg p-2 my-2 rounded-md`}
         >
-          <Link href="/reactNews">
+          <Link href="/reactnews">
             <a>
               <div className="flex flex-row my-auto font-medium">
                 <div className="text-2xl">
@@ -55,27 +55,7 @@ const Navbar = () => {
             </a>
           </Link>
         </div>
-        {/* My Bookmark */}
-        <div
-          className={`${
-            router.pathname == "/myBookmarks"
-              ? "active bg-hellosidebarblue-400 shadow-lg"
-              : ""
-          } hover:bg-hellosidebarblue-400 hover:shadow-lg p-2 my-2 rounded-md`}
-        >
-          <Link href="/myBookmarks">
-            <a>
-              <div className="flex flex-row my-auto font-medium">
-                <div className="text-2xl">
-                  <MdCollectionsBookmark />
-                </div>
-                <span className="my-auto mx-4 text-sm md:text-md">
-                  My Bookmark
-                </span>
-              </div>
-            </a>
-          </Link>
-        </div>
+
         {/* Add Resource */}
         <div
           className={`${

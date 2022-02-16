@@ -29,33 +29,34 @@ const VideosList = () => {
     return array;
   }
 
-  const MAX_VIDEOS = 10;
-  useEffect(() => {
-    const loadArticles = async (url) => {
-      fetch(url, { headers: { Accept: "application/json" } })
-        .then((res) => res.json())
-        .then((data) => data.items.filter((item) => item.title.length > 0))
-        .then((newVideos) => newVideos.slice(0, MAX_VIDEOS))
-        .then((videos) => {
-          setVideos(videos);
-        })
-        .catch((error) => console.log(error));
-    };
+  // const MAX_VIDEOS = 10;
+  // useEffect(() => {
+  //   const loadArticles = async (url) => {
+  //     fetch(url, { headers: { Accept: "application/json" } })
+  //       .then((res) => res.json())
+  //       .then((data) => data.items.filter((item) => item.title.length > 0))
+  //       .then((newVideos) => newVideos.slice(0, MAX_VIDEOS))
+  //       .then((videos) => {
+  //         setVideos(videos);
+  //       })
+  //       .catch((error) => console.log(error));
+  //   };
 
-    rssList.forEach((url) => {
-      loadArticles(url);
+  //   rssList.forEach((url) => {
+  //     loadArticles(url);
 
-      tempArray = tempArray.sort((a, b) => {
-        return new Date(b.pubDate) - new Date(a.pubDate);
-      });
-      // shuffle array
-      tempArray = [...new Set(shuffleArray(tempArray))];
-    });
-  }, [MAX_VIDEOS]);
+  //     tempArray = tempArray.sort((a, b) => {
+  //       return new Date(b.pubDate) - new Date(a.pubDate);
+  //     });
+  //     // shuffle array
+  //     tempArray = [...new Set(shuffleArray(tempArray))];
+  //   });
+  // }, [MAX_VIDEOS]);
 
   const fetchvideos = async (url, parser) => {
-    const feed = await parser.parseURL(`https://iamkenn.herokuapp.com/${url}`);
+    // const feed = await parser.parseURL(`https://iamkenn.herokuapp.com/${url}`);
     // const feed = await parser.parseURL(`https://cors.bridged.cc/${url}`);
+    const feed = await parser.parseURL(`https://cors.eu.org/${url}`);
     const videoPost = feed.items.filter((item) => {
       for (let i = 0; i < keywords.length; i++) {
         if (!item.title.toLowerCase().includes(keywords[i].toLowerCase()))
@@ -67,27 +68,27 @@ const VideosList = () => {
     setLoading(false);
   };
 
-  // useEffect(() => {
-  //   rssList = rssList.sort(() => Math.random() - 0.5);
-  //   rssList.forEach((url) => {
-  //     tempURL = url;
-  //     var parser = new Parser();
-  //     // const filterPosts = (items, limit) => {
-  //     //   ...
-  //     // }
-  //     fetchvideos(url, parser);
+  useEffect(() => {
+    rssList = rssList.sort(() => Math.random() - 0.5);
+    rssList.forEach((url) => {
+      tempURL = url;
+      var parser = new Parser();
+      // const filterPosts = (items, limit) => {
+      //   ...
+      // }
+      fetchvideos(url, parser);
 
-  //     tempArray = tempArray.sort((a, b) => {
-  //       return new Date(b.pubDate) - new Date(a.pubDate);
-  //     });
-  //     // shuffle array
-  //     tempArray = [...new Set(shuffleArray(tempArray))];
-  //   });
-  //   setVideos(tempArray);
-  //   // console.log(tempArray);
-  // }, [rssList]);
+      tempArray = tempArray.sort((a, b) => {
+        return new Date(b.pubDate) - new Date(a.pubDate);
+      });
+      // shuffle array
+      tempArray = [...new Set(shuffleArray(tempArray))];
+    });
+    setVideos(tempArray);
+    // console.log(videos);
 
-  // console.log(videos);
+  }, []);
+
 
   return (
     <div>
