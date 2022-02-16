@@ -37,7 +37,7 @@ const Navbar = () => {
         {/* React News */}
         <div
           className={`${
-            router.pathname == "/reactNews"
+            router.pathname == "/reactnews"
               ? "active bg-hellosidebarblue-400 shadow-lg"
               : ""
           } hover:bg-hellosidebarblue-400 hover:shadow-lg p-2 my-2 rounded-md`}
