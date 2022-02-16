@@ -3,13 +3,13 @@ import Link from "next/link";
 import Navbar from "./Navbar";
 import { GoSettings } from "react-icons/go";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { FiLogIn } from "react-icons/fi";
+import { BiCodeCurly } from "react-icons/bi";
 import { VscFeedback } from "react-icons/vsc";
 // import { useSpring, animated } from "react-spring";
 
 import { Dialog, Transition } from "@headlessui/react";
 
-import Login from "./Auth";
+import Developer from "./Developer";
 
 const Sidebar = () => {
   const [isSideBarHidden, setSideBarHidden] = useState(false);
@@ -79,7 +79,7 @@ const Sidebar = () => {
                       leaveTo="opacity-0 scale-95"
                     >
                       <div className="inline-block z-50 w-full max-w-md my-8 overflow-hidden text-left align-middle transition-all transform bg-gray-50 shadow-xl rounded-2xl">
-                        <Login />
+                        <Developer />
                       </div>
                     </Transition.Child>
                   </div>
@@ -87,18 +87,14 @@ const Sidebar = () => {
               </Transition>
             </div>
 
-            {!session ? (
-              <div onClick={openModal}>
-                <div className="flex flex-row justify-center font-medium text-md mx-7 my-2 hover:shadow p-3 hover:bg-hellosidebarblue-400 rounded cursor-pointer">
-                  <h2 className="mx-2">Login</h2>
-                  <div className="my-auto text-2xl">
-                    <FiLogIn />
-                  </div>
+            <div onClick={openModal}>
+              <div className="flex flex-row justify-center font-medium text-md mx-7 my-2 hover:shadow p-3 hover:bg-hellosidebarblue-400 rounded cursor-pointer">
+                <h2 className="mx-2">The Builder</h2>
+                <div className="my-auto text-2xl">
+                  <BiCodeCurly />
                 </div>
               </div>
-            ) : (
-              <h1>Hello, Kenn!</h1>
-            )}
+            </div>
           </div>
           <div>
             {/* Navbar */}
