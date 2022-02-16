@@ -1,5 +1,5 @@
 import Head from "next/head";
-import TabsRender from "../../components/ReactNewsLayer/Tabs";
+import TabsRender from "../components/ReactNewsLayer/Tabs";
 
 export default function ReactNews() {
   return (
