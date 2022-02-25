@@ -4,8 +4,6 @@ import Navbar from "./Navbar";
 import { GoSettings } from "react-icons/go";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { BiCodeCurly } from "react-icons/bi";
-import { VscFeedback } from "react-icons/vsc";
-// import { useSpring, animated } from "react-spring";
 
 import { Dialog, Transition } from "@headlessui/react";
 
@@ -96,8 +94,7 @@ const Sidebar = () => {
               </div>
             </div>
           </div>
-          <div>
-            {/* Navbar */}
+          <div className="my-auto">
             <div className="px-2 mx-1 my-auto">
               <Navbar />
             </div>
@@ -106,16 +103,6 @@ const Sidebar = () => {
               className="absolute bg-hellosidebarblue-400 hover:bg-hellosidebarblue-500 shadow-md text-3xl px-3 py-2 ml-52 md:ml-48 -mt-56 rounded cursor-pointer"
             >
               <IoIosArrowBack />
-            </div>
-          </div>
-          {/* Settings Info */}
-          <div className="flex flex-row text-center bottom-0 p-3 mx-2 bg-hellosidebarblue-600 hover:shadow-lg rounded-md">
-            {/* <div className="text-2xl my-auto bg-hellosidebarblue-600 hover:shadow-lg px-2 py-1 rounded cursor-pointer ">
-              <GoSettings />
-            </div> */}
-            <h3 className="my-auto text-xs ml-2"> Give Feedback 👋 </h3>
-            <div className="bg-helloblue-800 hover:shadow-lg text-xl px-2 py-1 ml-2 rounded cursor-pointer">
-              <VscFeedback />
             </div>
           </div>
         </div>

@@ -6,6 +6,7 @@ import { MdCollectionsBookmark } from "react-icons/md";
 import { HiViewGridAdd, HiNewspaper } from "react-icons/hi";
 import { MdWork } from "react-icons/md";
 import { FaHandsHelping } from "react-icons/fa";
+import { VscFeedback } from "react-icons/vsc";
 
 const Navbar = () => {
   const router = useRouter();
@@ -64,7 +65,7 @@ const Navbar = () => {
               : ""
           } hover:bg-hellosidebarblue-400 hover:shadow-lg p-2 my-2 rounded-md`}
         >
-          <Link href="/">
+          <Link href="/addResource">
             <a>
               <div className="flex flex-row my-auto font-medium">
                 <div className="text-2xl">
@@ -118,6 +119,27 @@ const Navbar = () => {
                 </span>
                 <span className="text-xs text-gray-500 italic my-auto">
                   soon
+                </span>
+              </div>
+            </a>
+          </Link>
+        </div>
+        {/* Feature */}
+        <div
+          className={`${
+            router.pathname == "/feature"
+              ? "active bg-hellosidebarblue-400 shadow-lg"
+              : ""
+          } hover:bg-hellosidebarblue-400 hover:shadow-lg p-2 my-2 rounded-md`}
+        >
+          <Link href="/feature">
+            <a>
+              <div className="flex flex-row my-auto font-medium">
+                <div className="text-2xl">
+                  <VscFeedback />
+                </div>
+                <span className="my-auto mx-4 text-sm md:text-md">
+                  Request a Feature
                 </span>
               </div>
             </a>
