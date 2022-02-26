@@ -60,7 +60,7 @@ const Navbar = () => {
         {/* Add Resource */}
         <div
           className={`${
-            router.pathname == "/addResources"
+            router.pathname == "/addResource"
               ? "active bg-hellosidebarblue-400 shadow-lg"
               : ""
           } hover:bg-hellosidebarblue-400 hover:shadow-lg p-2 my-2 rounded-md`}
@@ -108,7 +108,7 @@ const Navbar = () => {
               : ""
           } hover:bg-hellosidebarblue-400 hover:shadow-lg p-2 my-2 rounded-md`}
         >
-          <Link href="/">
+          <Link href="/sponsors">
             <a>
               <div className="flex flex-row my-auto font-medium">
                 <div className="text-2xl">
@@ -116,9 +116,6 @@ const Navbar = () => {
                 </div>
                 <span className="my-auto mx-4 text-sm md:text-md">
                   Sponsors
-                </span>
-                <span className="text-xs text-gray-500 italic my-auto">
-                  soon
                 </span>
               </div>
             </a>

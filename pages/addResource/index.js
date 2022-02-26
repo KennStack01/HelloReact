@@ -3,43 +3,45 @@ import Layout from "../../components/layout";
 import TabsRender from "../../components/ReactNewsLayer/Tabs";
 
 export default function Feature() {
-
   async function handleOnSubmit(e) {
-    e.preventDefault()
+    e.preventDefault();
 
-    const formData = {}
+    const formData = {};
 
-    Array.from(e.currentTarget.elements).forEach(field => {
+    Array.from(e.currentTarget.elements).forEach((field) => {
       if (!field.name) return;
 
-      formData[field.name] = field.value
-    })
+      formData[field.name] = field.value;
+    });
 
-    fetch('api/feature', {
-      method: 'post',
-      body: JSON.stringify(formData)
-    })
+    fetch("api/feature", {
+      method: "post",
+      body: JSON.stringify(formData),
+    });
     // console.log(formData)
-
   }
-
 
   return (
     <div className="flex flex-col justify-center min-h-screen py-2 md:mx-4">
       <Head>
-        <title>Request React Feature | HelloReact</title>
+        <title>Request Feature | HelloReact</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex flex-col w-full flex-1 md:px-20 xl:px-96 text-center">
-      <div className="flex flex-col mx-5 md:mx-10">
-        <h2 className="my-5 text-2xl text-helloblue-700 font-semibold">New Resource</h2>
-        <div className="mt-5 md:mt-0 ">
+        <div className="flex flex-col mx-2 md:mx-10">
+          <h2 className="my-5 text-2xl text-helloblue-700 font-semibold">
+            New Resource
+          </h2>
+          <div className="mt-5 md:mt-0 ">
             <form action="#" method="POST" onSubmit={handleOnSubmit}>
               <div className="flex flex-col mx-4 md:mx-10 text-left shadow overflow-hidden sm:rounded-md">
                 <div className="px-4 py-5 bg-white sm:p-6">
                   <div className="flex flex-col">
-                  <div className="my-2">
-                      <label htmlFor="country" className="block text-sm font-medium text-gray-700">
+                    <div className="my-2">
+                      <label
+                        htmlFor="country"
+                        className="block text-sm font-medium text-gray-700"
+                      >
                         Category
                       </label>
                       <select
@@ -56,7 +58,10 @@ export default function Feature() {
                       </select>
                     </div>
                     <div className="">
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                      <label
+                        htmlFor="name"
+                        className="block text-sm font-medium text-gray-700"
+                      >
                         Name
                       </label>
                       <input
@@ -64,12 +69,16 @@ export default function Feature() {
                         name="name"
                         id="name"
                         autoComplete="given-name"
+                        required
                         className="mt-1 focus:ring-helloblue-500 focus:border-helloblue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
 
                     <div className="my-2">
-                      <label htmlFor="email-address" className="block text-sm font-medium text-gray-700">
+                      <label
+                        htmlFor="email-address"
+                        className="block text-sm font-medium text-gray-700"
+                      >
                         Email address
                       </label>
                       <input
@@ -77,48 +86,41 @@ export default function Feature() {
                         name="email-address"
                         id="email-address"
                         autoComplete="email"
+                        required
                         className="mt-1 focus:ring-helloblue-500 focus:border-helloblue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
 
                     <div className="">
-                      <label htmlFor="url" className="block text-sm font-medium text-gray-700">
-                        URL Adress
+                      <label
+                        htmlFor="url"
+                        className="block text-sm font-medium text-gray-700"
+                      >
+                        URL Address
                       </label>
                       <input
                         type="text"
                         name="url"
                         id="url"
                         autoComplete="given-url"
+                        required
                         className="mt-1 focus:ring-helloblue-500 focus:border-helloblue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
-                  
-                    
-
-                      
-
-                   
-
-                  
-
-                    
-                    
                   </div>
                 </div>
-                  <div className="px-4 py-3 bg-gray-50 text-left sm:px-6">
-                    <button
-                      type="submit"
-                      className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-helloblue-600 hover:bg-helloblue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-helloblue-500"
-                    >
-                      Add Request
-                    </button>
-                  </div>
+                <div className="px-4 py-3 bg-gray-50 text-left sm:px-6">
+                  <button
+                    type="submit"
+                    className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-helloblue-600 hover:bg-helloblue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-helloblue-500"
+                  >
+                    Add Resource
+                  </button>
+                </div>
               </div>
             </form>
           </div>
-      </div>
-       
+        </div>
       </main>
     </div>
   );

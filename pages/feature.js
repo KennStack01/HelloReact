@@ -31,7 +31,7 @@ export default function Feature() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex flex-col w-full flex-1 md:px-20 xl:px-96 text-center">
-      <div className="flex flex-col mx-5 md:mx-10">
+      <div className="flex flex-col mx-2 md:mx-10">
         <h2 className="my-5 text-2xl text-helloblue-700 font-semibold">New Request</h2>
         <div className="mt-5 md:mt-0 ">
             <form action="#" method="POST" onSubmit={handleOnSubmit}>
@@ -47,6 +47,7 @@ export default function Feature() {
                         name="name"
                         id="name"
                         autoComplete="given-name"
+                        required
                         className="mt-1 focus:ring-helloblue-500 focus:border-helloblue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
@@ -60,6 +61,7 @@ export default function Feature() {
                         name="email-address"
                         id="email-address"
                         autoComplete="email"
+                        required
                         className="mt-1 focus:ring-helloblue-500 focus:border-helloblue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
@@ -109,6 +111,7 @@ export default function Feature() {
                         className="shadow-sm focus:ring-helloblue-500 focus:border-helloblue-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
                         placeholder="Please, provide some details to help the project succeed"
                         defaultValue={''}
+                        required
                       />
                     </div>
                     <p className="mt-2 text-xs text-gray-500">

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Image from "next/image";
 import wavingHand from "../public/wave.png";
 import { SiReact } from "react-icons/si";
@@ -37,18 +38,20 @@ const PubBanner = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col place-content-end bg-helloblue-600 py-4 md:py-10 px-4 md:px-8 rounded-3xl cursor-pointer">
-        <p className="md:italic text-xs md:text-md">Reserved Space</p>
-        <h2 className="text-xs md:text-md font-bold text-center mb-4">
-          Contact us
-        </h2>
-        <div className="flex flex-row justify-center text-helloblue-700 font-bold bg-helloyellow-500 rounded-xl p-2">
-          <p>Open</p>
-          <div className="text-xl my-auto">
-            <BiDoorOpen />
+      <Link href="/adsBanner">
+        <a className="flex flex-col place-content-end bg-helloblue-600 py-4 md:py-10 px-4 md:px-8 rounded-3xl cursor-pointer">
+          <p className="md:italic text-xs md:text-md">Reserved Space</p>
+          <h2 className="text-xs md:text-md font-bold text-center mb-4">
+            Contact us
+          </h2>
+          <div className="flex flex-row justify-center text-helloblue-700 font-bold bg-helloyellow-500 rounded-xl p-2">
+            <p>Open</p>
+            <div className="text-xl my-auto">
+              <BiDoorOpen />
+            </div>
           </div>
-        </div>
-      </div>
+        </a>
+      </Link>
     </div>
   );
 };
