@@ -1,30 +1,46 @@
 import Head from "next/head";
+import emailjs from "emailjs-com";
 import Layout from "../../components/layout";
 import TabsRender from "../../components/ReactNewsLayer/Tabs";
 
+
 export default function Feature() {
-  async function handleOnSubmit(e) {
+
+   function sendEmail(e) {
     e.preventDefault();
 
-    const formData = {};
-
-    Array.from(e.currentTarget.elements).forEach((field) => {
-      if (!field.name) return;
-
-      formData[field.name] = field.value;
-    });
-
-    fetch("api/feature", {
-      method: "post",
-      body: JSON.stringify(formData),
-    });
-    // console.log(formData)
+    emailjs.sendForm(
+      process.env.EMAILJS_SERVICE_ID,
+      process.env.EMAILJS_TEMPLATE_RESOURCE_ID,
+      e.target,
+      process.env.EMAILJS_USER_ID
+    ).then(res=>{
+        console.log(res);
+    }).catch(err=> console.log(err));
   }
+
+  // async function handleOnSubmit(e) {
+  //   e.preventDefault();
+
+  //   const formData = {};
+
+  //   Array.from(e.currentTarget.elements).forEach((field) => {
+  //     if (!field.name) return;
+
+  //     formData[field.name] = field.value;
+  //   });
+
+  //   fetch("api/feature", {
+  //     method: "post",
+  //     body: JSON.stringify(formData),
+  //   });
+  //   // console.log(formData)
+  // }
 
   return (
     <div className="flex flex-col justify-center min-h-screen py-2 md:mx-4">
       <Head>
-        <title>Request Feature | HelloReact</title>
+        <title>Add Resource | HelloReact</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex flex-col w-full flex-1 md:px-20 xl:px-96 text-center">
@@ -33,21 +49,21 @@ export default function Feature() {
             New Resource
           </h2>
           <div className="mt-5 md:mt-0 ">
-            <form action="#" method="POST" onSubmit={handleOnSubmit}>
+            <form onSubmit={sendEmail}>
               <div className="flex flex-col mx-4 md:mx-10 text-left shadow overflow-hidden sm:rounded-md">
                 <div className="px-4 py-5 bg-white sm:p-6">
                   <div className="flex flex-col">
                     <div className="my-2">
                       <label
-                        htmlFor="country"
+                        htmlFor="category"
                         className="block text-sm font-medium text-gray-700"
                       >
                         Category
                       </label>
                       <select
-                        id="country"
-                        name="country"
-                        autoComplete="country-name"
+                        id="category"
+                        name="category"
+                        autoComplete="category"
                         className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                       >
                         <option>Blog</option>
@@ -82,7 +98,7 @@ export default function Feature() {
                         Email address
                       </label>
                       <input
-                        type="text"
+                        type="email"
                         name="email-address"
                         id="email-address"
                         autoComplete="email"
@@ -107,6 +123,10 @@ export default function Feature() {
                         className="mt-1 focus:ring-helloblue-500 focus:border-helloblue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
+
+                    <div className="g-recaptcha" data-sitekey={process.env.RECAPTCHA_SITE_KEY}></div>
+                    <br/>
+
                   </div>
                 </div>
                 <div className="px-4 py-3 bg-gray-50 text-left sm:px-6">
