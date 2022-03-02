@@ -9,7 +9,7 @@ export default function ThankYou() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex flex-col w-full flex-1 md:px-20 text-center">
-        <div className="flex flex-row mx-auto my-auto md:my-20 text-center text-helloblue-700 text-2xl font-semibold justify-between">
+        <div className="flex flex-row mx-auto my-8 md:my-20 text-center text-helloblue-700 text-2xl font-semibold justify-between">
           Thanks for Submitting! <br/>
           See you very soon ⌚🤙
         </div>

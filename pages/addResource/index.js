@@ -76,6 +76,7 @@ export default function Feature() {
                       >
                         <option>Blog</option>
                         <option>Youtube Channel</option>
+                        <option>Youtube Playlist</option>
                         <option>E-Book</option>
                         <option>Conference</option>
                         <option>Website</option>

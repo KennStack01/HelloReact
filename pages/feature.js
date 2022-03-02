@@ -4,25 +4,6 @@ import TabsRender from "../components/ReactNewsLayer/Tabs";
 
 export default function Feature() {
 
-  async function handleOnSubmit(e) {
-    e.preventDefault()
-
-    const formData = {}
-
-    Array.from(e.currentTarget.elements).forEach(field => {
-      if (!field.name) return;
-
-      formData[field.name] = field.value
-    })
-
-    fetch('api/feature', {
-      method: 'post',
-      body: JSON.stringify(formData)
-    })
-    // console.log(formData)
-
-  }
-
 
   return (
     <div className="flex flex-col justify-center min-h-screen py-2 md:mx-4">
@@ -34,18 +15,20 @@ export default function Feature() {
       <div className="flex flex-col mx-2 md:mx-10">
         <h2 className="my-5 text-2xl text-helloblue-700 font-semibold">New Request</h2>
         <div className="mt-5 md:mt-0 ">
-            <form action="#" method="POST" onSubmit={handleOnSubmit}>
+            <form action="https://formsubmit.co/560d47194bcb65da44c8f2387e83989b" method="POST">
               <div className="flex flex-col mx-4 md:mx-10 text-left shadow overflow-hidden sm:rounded-md">
                 <div className="px-4 py-5 bg-white sm:p-6">
                   <div className="flex flex-col">
+                   <input type="hidden" name="_subject" value="Feature Request!" />
+                  <input type="hidden" name="_next" value="https://helloreact-beta.vercel.app/thankyou" />
                     <div className="">
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                      <label htmlFor="Name" className="block text-sm font-medium text-gray-700">
                         Name
                       </label>
                       <input
                         type="text"
-                        name="name"
-                        id="name"
+                        name="Name"
+                        id="Name"
                         autoComplete="given-name"
                         required
                         className="mt-1 focus:ring-helloblue-500 focus:border-helloblue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
@@ -53,13 +36,13 @@ export default function Feature() {
                     </div>
                   
                     <div className="my-2">
-                      <label htmlFor="email-address" className="block text-sm font-medium text-gray-700">
+                      <label htmlFor="Email address" className="block text-sm font-medium text-gray-700">
                         Email address
                       </label>
                       <input
                         type="text"
-                        name="email-address"
-                        id="email-address"
+                        name="Email address"
+                        id="Email address"
                         autoComplete="email"
                         required
                         className="mt-1 focus:ring-helloblue-500 focus:border-helloblue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
@@ -74,23 +57,23 @@ export default function Feature() {
                         <div className="mt-2 space-y-1">
                           <div className="flex items-center cursor-pointer">
                             <input
-                              id="feature-request"
-                              name="request-type"
+                              id="Request type"
+                              name="Request type"
                               type="radio"
                               className="focus:ring-helloblue-500 cursor-pointer h-4 w-4 text-helloblue-600 border-gray-300"
                             />
-                            <label htmlFor="feature-request" className="ml-3 cursor-pointer block text-sm font-medium text-gray-700">
+                            <label htmlFor="Request type" className="ml-3 cursor-pointer block text-sm font-medium text-gray-700">
                               Feature Request
                             </label>
                           </div>
                           <div className="flex items-center cursor-pointer">
                             <input
-                              id="bug-report"
-                              name="request-type"
+                              id="Bug Report"
+                              name="Request type"
                               type="radio"
                               className="focus:ring-helloblue-500 cursor-pointer h-4 w-4 text-helloblue-600 border-gray-300"
                             />
-                            <label htmlFor="bug-report" className="ml-3 cursor-pointer block text-sm font-medium text-gray-700">
+                            <label htmlFor="Bug Report" className="ml-3 cursor-pointer block text-sm font-medium text-gray-700">
                               Bug Report
                             </label>
                           </div>
@@ -100,13 +83,13 @@ export default function Feature() {
                     </div>
 
                    <div className="my-2">
-                    <label htmlFor="about" className="block text-sm font-medium text-gray-700">
+                    <label htmlFor="Description" className="block text-sm font-medium text-gray-700">
                       Description
                     </label>
                     <div className="mt-1">
                       <textarea
-                        id="about"
-                        name="about"
+                        id="Description"
+                        name="Description"
                         rows={3}
                         className="shadow-sm focus:ring-helloblue-500 focus:border-helloblue-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
                         placeholder="Please, provide some details to help the project succeed"
@@ -118,10 +101,6 @@ export default function Feature() {
                       Brief description for your request
                     </p>
                   </div>
-
-                  
-
-                    
                     
                   </div>
                 </div>
