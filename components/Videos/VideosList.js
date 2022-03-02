@@ -107,7 +107,7 @@ const VideosList = () => {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder={`Type and Search | Video Title or Youtube Channel's Name`}
-                className="px-3 py-2 sticky top-0 placeholder-gray-400 text-blueGray-600 bg-white rounded text-sm outline-none focus:outline-none focus:ring-2 ring-1 ring-gray-300 focus:ring-helloblue-400 w-full"
+                className="px-3 py-2 sticky top-0 placeholder-gray-400 text-blueGray-600 bg-white rounded text-sm outline-none focus:outline-none focus:ring-2 ring-1 ring-gray-100 focus:ring-helloblue-400 w-full"
               />
             </div>
             <div className="md:grid grid-cols-3 mx-auto">
