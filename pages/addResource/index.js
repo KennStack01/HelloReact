@@ -2,6 +2,7 @@ import Head from "next/head";
 import emailjs from "emailjs-com";
 import Layout from "../../components/layout";
 import TabsRender from "../../components/ReactNewsLayer/Tabs";
+import ReCAPTCHA from 'react-google-recaptcha';
 
 
 export default function Feature() {
@@ -10,10 +11,11 @@ export default function Feature() {
     e.preventDefault();
 
     emailjs.sendForm(
-      process.env.EMAILJS_SERVICE_ID,
-      process.env.EMAILJS_TEMPLATE_RESOURCE_ID,
+      "service_djz3wgw",
+      "template_y0zb5bp",
       e.target,
-      process.env.EMAILJS_USER_ID
+      // process.env.RECAPTCHA_SECRET_KEY,
+      "jqaJtakdakuKIY052"
     ).then(res=>{
         console.log(res);
     }).catch(err=> console.log(err));
@@ -124,9 +126,8 @@ export default function Feature() {
                       />
                     </div>
 
-                    <div className="g-recaptcha" data-sitekey={process.env.RECAPTCHA_SITE_KEY}></div>
+                    {/* <div className="g-recaptcha" data-sitekey="6LfmY6weAAAAAJbCHax1o4cRiUu_M7SlUcLn5LY-"></div> */}
                     <br/>
-
                   </div>
                 </div>
                 <div className="px-4 py-3 bg-gray-50 text-left sm:px-6">
