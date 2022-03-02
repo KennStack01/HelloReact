@@ -1,25 +1,28 @@
+import React, {useState} from "react";
 import Head from "next/head";
 import emailjs from "emailjs-com";
 import Layout from "../../components/layout";
 import TabsRender from "../../components/ReactNewsLayer/Tabs";
-import ReCAPTCHA from 'react-google-recaptcha';
+// import ReCAPTCHA from 'react-google-recaptcha';
+
 
 
 export default function Feature() {
 
-   function sendEmail(e) {
-    e.preventDefault();
 
-    emailjs.sendForm(
-      "service_djz3wgw",
-      "template_y0zb5bp",
-      e.target,
-      // process.env.RECAPTCHA_SECRET_KEY,
-      "jqaJtakdakuKIY052"
-    ).then(res=>{
-        console.log(res);
-    }).catch(err=> console.log(err));
-  }
+  //  function sendEmail(e) {
+  //   e.preventDefault();
+
+  //   emailjs.sendForm(
+  //     "service_djz3wgw",
+  //     "template_y0zb5bp",
+  //     e.target,
+  //     // process.env.RECAPTCHA_SECRET_KEY,
+  //     "jqaJtakdakuKIY052"
+  //   ).then(res=>{
+  //       console.log(res);
+  //   }).catch(err=> console.log(err));
+  // }
 
   // async function handleOnSubmit(e) {
   //   e.preventDefault();
@@ -51,20 +54,23 @@ export default function Feature() {
             New Resource
           </h2>
           <div className="mt-5 md:mt-0 ">
-            <form onSubmit={sendEmail}>
+            {/* <form onSubmit={sendEmail}> */}
+            <form action="https://formsubmit.co/560d47194bcb65da44c8f2387e83989b" method="POST">
               <div className="flex flex-col mx-4 md:mx-10 text-left shadow overflow-hidden sm:rounded-md">
                 <div className="px-4 py-5 bg-white sm:p-6">
                   <div className="flex flex-col">
+                  <input type="hidden" name="_subject" value="New Resource!" />
+                  <input type="hidden" name="_next" value="https://helloreact-beta.vercel.app/thankyou" />
                     <div className="my-2">
                       <label
-                        htmlFor="category"
+                        htmlFor="Category"
                         className="block text-sm font-medium text-gray-700"
                       >
                         Category
                       </label>
                       <select
-                        id="category"
-                        name="category"
+                        id="Category"
+                        name="Category"
                         autoComplete="category"
                         className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                       >
@@ -77,15 +83,15 @@ export default function Feature() {
                     </div>
                     <div className="">
                       <label
-                        htmlFor="name"
+                        htmlFor="Name"
                         className="block text-sm font-medium text-gray-700"
                       >
                         Name
                       </label>
                       <input
                         type="text"
-                        name="name"
-                        id="name"
+                        name="Name"
+                        id="Name"
                         autoComplete="given-name"
                         required
                         className="mt-1 focus:ring-helloblue-500 focus:border-helloblue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
@@ -94,14 +100,14 @@ export default function Feature() {
 
                     <div className="my-2">
                       <label
-                        htmlFor="email-address"
+                        htmlFor="Email Address"
                         className="block text-sm font-medium text-gray-700"
                       >
                         Email address
                       </label>
                       <input
                         type="email"
-                        name="email-address"
+                        name="Email Address"
                         id="email-address"
                         autoComplete="email"
                         required
@@ -111,23 +117,21 @@ export default function Feature() {
 
                     <div className="">
                       <label
-                        htmlFor="url"
+                        htmlFor="URL"
                         className="block text-sm font-medium text-gray-700"
                       >
                         URL Address
                       </label>
                       <input
                         type="text"
-                        name="url"
-                        id="url"
+                        name="URL"
+                        id="URL"
                         autoComplete="given-url"
                         required
                         className="mt-1 focus:ring-helloblue-500 focus:border-helloblue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
 
-                    {/* <div className="g-recaptcha" data-sitekey="6LfmY6weAAAAAJbCHax1o4cRiUu_M7SlUcLn5LY-"></div> */}
-                    <br/>
                   </div>
                 </div>
                 <div className="px-4 py-3 bg-gray-50 text-left sm:px-6">
