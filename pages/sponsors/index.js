@@ -42,6 +42,11 @@ export default function Sponsors() {
     <div className="flex flex-col justify-center min-h-screen py-2 md:mx-4">
       <Head>
         <title>Sponsors | HelloReact</title>
+        <meta
+          name="description"
+          content="helloReact Free React Resources for Developers in 2022"
+        />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex flex-col w-full flex-1 md:px-10 xl:px-48 text-center">

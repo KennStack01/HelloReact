@@ -6,9 +6,9 @@ const Website = ({ WebsiteURL }) => {
     <div className="md:mx-2 mx-auto my-3">
       <LinkPreview
         url={WebsiteURL}
-        // width="250px"
+        // width="auto"
         height="300px"
-        className="text-sm w-6/7 font-medium hover:border hover:border-l-2 shadow-sm hover:shadow-lg hover:border-red-400"
+        className="text-sm font-medium hover:border hover:border-l-2 shadow-sm hover:shadow-lg hover:border-red-400"
       />
     </div>
   );

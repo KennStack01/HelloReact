@@ -138,7 +138,7 @@ const NewsList = () => {
         {loading ? (
           <div>
             <h1 className="text-xl text-gray-700 font-semibold text-center mx-auto place-self-center">
-              Loading... (Under Development)
+              Loading... 
             </h1>
           </div>
         ) : (

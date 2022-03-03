@@ -13,6 +13,9 @@ export default function ThankYou() {
           Thanks for Submitting! <br/>
           See you very soon ⌚🤙
         </div>
+        <Link href="/reactnews">
+            <a className="p-2 text-white bg-gray-700 mx-auto"> Check React News </a>
+          </Link>
       </main>
 
       {/* <footer className="flex items-center justify-center w-full h-24 border-t"></footer> */}

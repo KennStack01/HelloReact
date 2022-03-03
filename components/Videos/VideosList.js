@@ -68,7 +68,7 @@ const VideosList = () => {
     setLoading(false);
   };
 
-  useEffect(() => {
+  const fetchReadyData = () => {
     rssList = rssList.sort(() => Math.random() - 0.5);
     rssList.forEach((url) => {
       tempURL = url;
@@ -86,9 +86,11 @@ const VideosList = () => {
     });
     setVideos(tempArray);
     // console.log(videos);
+  };
 
+  useEffect(() => {
+    fetchReadyData();
   }, []);
-
 
   return (
     <div>
@@ -96,7 +98,10 @@ const VideosList = () => {
         {isLoading ? (
           <div>
             <h1 className="text-xl text-gray-700 font-semibold text-center mx-auto place-self-center">
-              Loading... (Under Development)
+              Loading... <br />{" "}
+              <span className="text-xs text-gray-500 mx-5">
+                if this persists, please reload the page!
+              </span>
             </h1>
           </div>
         ) : (

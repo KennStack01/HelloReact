@@ -1,15 +1,11 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Head from "next/head";
 import emailjs from "emailjs-com";
 import Layout from "../../components/layout";
 import TabsRender from "../../components/ReactNewsLayer/Tabs";
 // import ReCAPTCHA from 'react-google-recaptcha';
 
-
-
 export default function Feature() {
-
-
   //  function sendEmail(e) {
   //   e.preventDefault();
 
@@ -46,6 +42,11 @@ export default function Feature() {
     <div className="flex flex-col justify-center min-h-screen py-2 md:mx-4">
       <Head>
         <title>Add Resource | HelloReact</title>
+        <meta
+          name="description"
+          content="helloReact Free React Resources for Developers in 2022"
+        />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex flex-col w-full flex-1 md:px-20 xl:px-96 text-center">
@@ -55,12 +56,23 @@ export default function Feature() {
           </h2>
           <div className="mt-5 md:mt-0 ">
             {/* <form onSubmit={sendEmail}> */}
-            <form action="https://formsubmit.co/560d47194bcb65da44c8f2387e83989b" method="POST">
+            <form
+              action="https://formsubmit.co/560d47194bcb65da44c8f2387e83989b"
+              method="POST"
+            >
               <div className="flex flex-col mx-4 md:mx-10 text-left shadow overflow-hidden sm:rounded-md">
                 <div className="px-4 py-5 bg-white sm:p-6">
                   <div className="flex flex-col">
-                  <input type="hidden" name="_subject" value="New Resource!" />
-                  <input type="hidden" name="_next" value="https://helloreact-beta.vercel.app/thankyou" />
+                    <input
+                      type="hidden"
+                      name="_subject"
+                      value="New Resource!"
+                    />
+                    <input
+                      type="hidden"
+                      name="_next"
+                      value="https://helloreact-beta.vercel.app/thankyou"
+                    />
                     <div className="my-2">
                       <label
                         htmlFor="Category"
@@ -132,7 +144,6 @@ export default function Feature() {
                         className="mt-1 focus:ring-helloblue-500 focus:border-helloblue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
                       />
                     </div>
-
                   </div>
                 </div>
                 <div className="px-4 py-3 bg-gray-50 text-left sm:px-6">

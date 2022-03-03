@@ -26,17 +26,21 @@ export default function NotFound() {
     <div className="flex flex-col justify-center min-h-screen py-2 md:mx-4">
       <Head>
         <title>Not Found | HelloReact</title>
+        <meta
+          name="description"
+          content="helloReact Free React Resources for Developers in 2022"
+        />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex flex-col w-full flex-1 md:px-20 xl:px-96 text-center">
-         <h2 className="my-5 text-xl md:text-2xl bg-helloblue-500 text-white p-3 rounded-sm font-semibold">
-            Not Found, my Friend 😃
-          </h2>
+        <h2 className="my-5 text-xl md:text-2xl bg-helloblue-500 text-white p-3 rounded-sm font-semibold">
+          Not Found, my Friend 😃
+        </h2>
 
-          <Link href="/sponsors">
-            <a className="p-2 text-white bg-gray-700 mx-auto"> Go Back </a>
-          </Link>
-
+        <Link href="/sponsors">
+          <a className="p-2 text-white bg-gray-700 mx-auto"> Go Back </a>
+        </Link>
       </main>
     </div>
   );
