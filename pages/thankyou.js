@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import TabsRender from "../components/HelloReactLayer/Tabs";
 
 export default function ThankYou() {
